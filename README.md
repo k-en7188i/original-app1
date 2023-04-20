@@ -11,15 +11,15 @@
 
 ## URL
 
-デプロイ済みのURLを記載 (デプロイが完了次第記載)
+https://original-app1.onrender.com
 
 ## テスト用アカウント
 
 
-Basic認証パスワード:  
-Basic認証ID：  
-メールアドレス：  
-パスワード：
+Basic認証ID：f1111  
+Basic認証パスワード: 8177  
+メールアドレス： kkkkkk@amail.com  
+パスワード：1111  
 
 
 ## 利用方法
