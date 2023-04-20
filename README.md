@@ -2,7 +2,7 @@
 
 # アプリケーション名
 
-おすすめニュース投稿アプリ『Blog’inComm  ブログをする『blogging』　＋　つながる場所/意思疎通『community/communication』
+おすすめニュース投稿アプリ『Blog’inComm』  ブログをする『blogging』　＋　つながる場所/意思疎通『community/communication』
 
 ## アプリケーション概要
 
@@ -15,7 +15,7 @@
 ## テスト用アカウント
 
 
-Basic認証パスワード  
+Basic認証パスワード:  
 Basic認証ID：  
 メールアドレス：  
 パスワード：
