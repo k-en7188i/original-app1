@@ -71,4 +71,8 @@ Ruby / Ruby on Rails / MySQL / GitHub / Heroku / Visual Studio Code / Trello・N
 
 ## 工夫したポイント
 
-制作背景・使用技術・開発方法・タスク管理など、企業へＰＲしたい事柄を記載。
+制作背景  
+使用技術  
+開発方法  
+タスク管理  
+(企業へＰＲしたい事柄を記載。)  
