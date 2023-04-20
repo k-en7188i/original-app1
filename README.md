@@ -63,7 +63,11 @@ Ruby / Ruby on Rails / MySQL / GitHub / Heroku / Visual Studio Code / Trello・N
 
 ## ローカルでの動作方法
 
-git cloneしてから、ローカルで動作をさせるまでに必要なコマンドを記載。
+以下のコマンドを順に実行。  
+% git clone https://github.com/k-en7188i/original-app1.git
+% cd 【ご自身が実行したいディレクトリ名】  
+% bundle install  
+% yarn install  
 
 ## 工夫したポイント
 
