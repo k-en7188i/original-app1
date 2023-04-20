@@ -2,8 +2,7 @@
 
 # アプリケーション名
 
-おすすめニュース投稿アプリ『Blog’inComm』
-ブログをする『blogging』　＋　つながる場所/意思疎通『community/communication』
+おすすめニュース投稿アプリ『Blog’inComm  ブログをする『blogging』　＋　つながる場所/意思疎通『community/communication』
 
 ## アプリケーション概要
 
@@ -15,8 +14,12 @@
 
 ## テスト用アカウント
 
-ログイン機能等を実装した場合は、ログインに必要な情報を記載。
-Basic認証等を設けている場合は、そのID/Passも記載。
+
+Basic認証パスワード
+Basic認証ID：
+メールアドレス：
+パスワード：
+
 
 ## 利用方法
 
@@ -28,7 +31,7 @@ Basic認証等を設けている場合は、そのID/Passも記載。
 
 ## 洗い出した要件
 
-要件定義をまとめたスプレッドシートのリンクを記載。
+[要件を定義したシート](https://docs.google.com/spreadsheets/d/1TujxyIm1oYkKDAx6mhSS8HnFYaHTmuMPfTktw3eRwpE/edit#gid=982722306)
 
 ## 実装した機能についての画像やGIFおよびその説明
 
@@ -47,8 +50,8 @@ Basic認証等を設けている場合は、そのID/Passも記載。
 [![Image from Gyazo](https://i.gyazo.com/124e363000809f69be808b4a42c11897.png)](https://gyazo.com/124e363000809f69be808b4a42c11897)
 
 ## 開発環境
+Ruby / Ruby on Rails / MySQL / GitHub / Heroku / Visual Studio Code / Trello・Notion
 
-使用した言語・サービスを記載。
 
 ## ローカルでの動作方法
 
