@@ -40,11 +40,11 @@ Basic認証等を設けている場合は、そのID/Passも記載。
 
 ## データベース設計
 
-ER図を添付。
+[![Image from Gyazo](https://i.gyazo.com/8aabed288b9ffc4bfb33590e6b9fc7a5.png)](https://gyazo.com/8aabed288b9ffc4bfb33590e6b9fc7a5)
 
 ## 画面遷移図
 
-画面遷移図を添付。
+[![Image from Gyazo](https://i.gyazo.com/124e363000809f69be808b4a42c11897.png)](https://gyazo.com/124e363000809f69be808b4a42c11897)
 
 ## 開発環境
 
