@@ -2,7 +2,7 @@
 
 # アプリケーション名
   
-おすすめニュース投稿アプリ『Blog’inComm』  
+おすすめニュース投稿アプリ『Blog’in-Com』  
 ブログをする『blogging』　＋　つながる場所/意思疎通『community/communication』
   
 ## アプリケーション概要
