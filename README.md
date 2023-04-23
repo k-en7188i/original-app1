@@ -60,7 +60,7 @@ Basic認証パスワード: 8817
 
 ## 開発環境
   
-Ruby / Ruby on Rails / MySQL / GitHub / Heroku / Visual Studio Code / Trello・Notion
+Ruby / Ruby on Rails / MySQL / GitHub・GitHub-Copilot / Heroku / Visual Studio Code / Trello・Notion
   
 ## ローカルでの動作方法
   
