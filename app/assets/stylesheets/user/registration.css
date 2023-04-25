@@ -1,6 +1,6 @@
 /* 共通 */
 .indispensable {
-  background: #5ff484;
+  background: #da7979;
   margin-left: 8px;
   padding: 3px;
   border-radius: 2px;
@@ -188,11 +188,12 @@
 
 .register-red-btn {
   width: 100%;
-  background: #5ff484;
-  border: 1px solid #5ff484;
-  color: #423f3f;
+  background: #727272;
+  border: 1px solid #727272;
+  color: #f6eeee;
   line-height: 48px;
   font-size: 14px;
+  font-weight: bolder;
   cursor: pointer;
 }
 
