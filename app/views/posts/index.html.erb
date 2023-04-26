@@ -54,13 +54,13 @@
         </a>
         <% if user_signed_in? %>
         <div class="fw-bold "><a>Now-Login  :</a></div>
-        <a><%= link_to current_user.nickname, "#", class: "fw-bold btn-outline-secondary" %></a>
+        <a><%= link_to current_user.nickname, "/users/#{current_user.id}", class: "fw-bold btn-outline-secondary" %></a>
         <%# <a class="btn btn-sm btn-outline-secondary" href="#">Log out</a> %>
-        <a><%= link_to 'Log out', destroy_user_session_path, method: :delete, class: "btn btn-sm fw-bold btn-outline-secondary" %> </a>
+        <a><%= link_to 'Log out', destroy_user_session_path, method: :delete, class: "btn btn-sm fw-bold btn-outline-secondary ms-3" %> </a>
         
         <% else %>
         <%# <a class="btn btn-sm btn-outline-secondary" href="#">Log in</a> %>
-        <a><%= link_to 'Log in', new_user_session_path, class: "btn btn-sm fw-bold btn-outline-secondary ms-3" %></a>
+        <a><%= link_to 'Log in', new_user_session_path, class: "btn btn-sm fw-bold btn-outline-secondary" %></a>
         <%# <a class="btn btn-sm btn-outline-secondary" href="#">Sign up</a> %>
         <a><%= link_to 'Sign up', new_user_registration_path, class: "btn btn-sm fw-bold btn-outline-secondary ms-3" %></a>
         <% end %>
@@ -68,11 +68,6 @@
     </div>
   </header>
 
-  <%= link_to "#", class: 'purchase-btn' do %>
-  <span class='purchase-btn-text'>Hey,Post HERE !!!</span>
-  <%= image_tag 'header-post_logo.png' , size: '185x50' ,class: "purchase-btn-icon" %>
-<% end %>
-  
   <div class="nav-scroller py-1 mb-2 ">
     <nav class="nav d-flex justify-content-around fw-bold ">
       <a class="p-2 link-secondary " href="#">RANKING</a>
@@ -297,7 +292,10 @@
       </div>
     </div>
   </div>
-
+  <%= link_to new_post_path, class: 'purchase-btn' do %>
+    <span class='purchase-btn-text'>Hey,Post HERE !!!</span>
+    <%= image_tag 'header-post_logo.png' , size: '185x50' ,class: "purchase-btn-icon" %>
+  <% end %>
 </main>
 
 <footer class="blog-footer">

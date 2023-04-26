@@ -1,0 +1,15 @@
+
+
+<div class="contents row">
+  <p><%= @nickname %>さんの投稿一覧</p>
+  <% if @posts.present? %>
+    <% @posts.each do |post| %>
+      <%= render partial: "posts/post", locals: { post: post } %>
+    <% end %>
+  <% else %>
+    <p>投稿がありません</p>
+  <% end %>
+  <div class="sell-btn-contents">
+    <%=link_to 'もどる', root_path, class:"back-btn" %>
+  </div>
+</div>
