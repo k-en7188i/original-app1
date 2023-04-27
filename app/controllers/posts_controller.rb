@@ -2,21 +2,29 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
 
   def index
-    # @post = Post.all
+    @post = Post.all
   end
 
   def new
-    # @post = Post.new
+    @post = Post.new
   end
 
   def create
-    # @post = Post.new(item_params)
-    # if @post.save
-    #   redirect_to root_path
-    # else
-    #   render :new
-    # end
+    @post = Post.new(post_params)
+    # binding.pry
+    puts params[:post][:category_id]
+    if @post.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
+
+  private
+
+    def post_params
+      params.require(:post).permit(:title, :content, :urllink, :category_id).merge(user_id: current_user.id)
+    end
 
 end
