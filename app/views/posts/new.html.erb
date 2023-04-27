@@ -45,17 +45,17 @@
       <div class="weight-bold-text"></div>
       <div class="form">
         <div class="weight-bold-text">
-          カテゴリー
+          リンクURL
           <span class="indispensable">必須</span>
         </div>
         <%#= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"post-category"}) %>
-        <%= f.text_area :category_id, class:"items-text", id:"item-category" %>
+        <%= f.text_area :condition_id, class:"items-text", id:"item-sales-status" %>
         <div class="weight-bold-text">
-          その他
+          カテゴリー
           <span class="indispensable">必須</span>
         </div>
         <%#= f.collection_select(:condition_id, Condition.all, :id, :name, {}, {class:"select-box", id:"post-category"}) %>
-        <%= f.text_area :condition_id, class:"items-text", id:"item-sales-status" %>
+        <%= f.text_area :category_id, class:"items-text", id:"item-category" %>
       </div>
     </div>
     <%# /商品の詳細 %>
