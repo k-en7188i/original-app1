@@ -5,8 +5,9 @@ class CreatePosts < ActiveRecord::Migration[6.0]
       t.string :content, null: false
       t.string :urllink, null: false
       t.string :category_id, null: false
+      # t.references :category_id, null: false, foreign_key: true 将来的にはこっちに変更する
 
-      # t.references :category_id, null: false, foreign_key: true 将来的にはこうしたい
+      t.bigint :user_id, null: false, foreign_key: true
 
       t.timestamps
     end

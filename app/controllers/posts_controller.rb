@@ -11,10 +11,10 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-    # binding.pry
-    puts params[:post][:category_id]
+ 
     if @post.save
-      redirect_to root_path
+      render 'create'
+      # redirect_to root_path
     else
       render :new
     end
