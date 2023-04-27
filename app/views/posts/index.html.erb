@@ -59,6 +59,7 @@
         <a><%= link_to 'Log out', destroy_user_session_path, method: :delete, class: "btn btn-sm fw-bold btn-outline-secondary ms-3" %> </a>
         
         <% else %>
+        <div class="fw-bold "><a>Login-Here!!</a></div>
         <%# <a class="btn btn-sm btn-outline-secondary" href="#">Log in</a> %>
         <a><%= link_to 'Log in', new_user_session_path, class: "btn btn-sm fw-bold btn-outline-secondary" %></a>
         <%# <a class="btn btn-sm btn-outline-secondary" href="#">Sign up</a> %>
