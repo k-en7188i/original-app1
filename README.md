@@ -52,7 +52,7 @@ Basic認証パスワード: 8817
 
 ## データベース設計
 
-[![Image from Gyazo](https://gyazo.com/c913a910e47dde166d2bab8a6588d7d2.png)](https://gyazo.com/c913a910e47dde166d2bab8a6588d7d2)
+[![Image from Gyazo](https://gyazo.com/296dafe896961aed0e6011c8c3c36c44.png)](https://gyazo.com/296dafe896961aed0e6011c8c3c36c44)
 
 ## 画面遷移図
 
