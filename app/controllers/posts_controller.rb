@@ -2,8 +2,9 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
 
   def index
-    @posts = Post.all
-    # @user = @posts.user
+    # @posts = Post.all
+    # @user = @post.user
+    @posts = Post.all.includes(:user)
   end
 
   def new
