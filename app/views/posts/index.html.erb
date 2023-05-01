@@ -140,7 +140,7 @@
       <li class='list'>
         <%= link_to posts_path(post.id) do %>
           <div class='item-img-content'>
-            <%#= image_tag post.image, class: "item-img" %>
+            <%= image_tag post.image, class: "item-img" if post.image.attached?%>
           </div>
           <span><%#= @nickname %></span>
 
