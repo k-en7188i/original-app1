@@ -146,7 +146,7 @@ div.contents.row div.content_post span.name span {
 div.contents.row .success {
   margin: 20px 0;
   padding: 30px;
-  /* box-shadow: 0 0 10px rgba(41, 41, 41, 0.2); */
+  box-shadow: 0 0 10px rgba(41, 41, 41, 0.2);
   background-color: white;
   box-sizing: border-box;
   text-align: center;
@@ -169,6 +169,27 @@ div.contents.row .success .btn {
   font-size: 24px;
   font-weight: bolder;
   cursor: pointer;
+}
+
+.content_post .post-img {
+  width: 25%;
+  height: 120%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 3px;
+  z-index: 1;
+}
+
+.content_post .content {
+  /* text-align: center; */
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  position: absolute;
+  /* left: 70%; */
+  top: 10%;
+  transform: translate(30%, 20%);
 }
 
 /* .contents .row .sell-btn-contents {
