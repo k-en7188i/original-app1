@@ -1,5 +1,8 @@
 class Post < ApplicationRecord
-  validates :title, :content, :urllink, :category_id, presence: true 
   belongs_to :user
   
+  has_one_attached :image
+
+
+  validates :title, :content, :urllink, :category_id, presence: true 
 end
