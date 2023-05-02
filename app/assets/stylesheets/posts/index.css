@@ -113,6 +113,7 @@ h1, h2, h3, h4, h5, h6 {
   flex-direction: column;
   align-items: center;
   padding: 10vh 0;
+  text-decoration-line: none;
 }
 
 .item-contents>.title {
@@ -136,6 +137,14 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.user-nickname {
+  font-size: 2vh;
+  margin: 1vh 0;
+  
+  color: #727272;
+  font-weight: bold;
 }
 
 .item-lists>.list {
@@ -174,9 +183,13 @@ h1, h2, h3, h4, h5, h6 {
   background-color: #FFF;
   color: black;
   padding: 1vw;
+  
+  font-size: 2vh;
 }
 
 .item-name {
+  
+  font-weight: bolder;
   font-size: 2.5vh;
 }
 
