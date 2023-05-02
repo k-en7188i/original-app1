@@ -138,7 +138,7 @@
 
     <% @posts.each do |post| %>
       <li class='list'>
-        <%= link_to posts_path(post.id) do %>
+        <%= link_to post_path(post.id) do %>
           <div class='item-img-content'>
             <%= image_tag post.image, class: "item-img" if post.image.attached?%>
           </div>

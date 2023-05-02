@@ -21,6 +21,12 @@ class PostsController < ApplicationController
     end
   end
 
+  def show
+    @post = Post.find(params[:id])
+    @posts = Post.all.includes(:user)
+    @user = @post.user
+  end
+
   def destroy
     post = Post.find(params[:id])
     post.destroy
