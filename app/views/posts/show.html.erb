@@ -15,6 +15,11 @@
           <%= @post.content %>
       </span>
       <span class="item-postage">
+      ★リンク先URL★
+        <%= link_to @post.urllink, @post.urllink %>
+      </span>
+      <span class="item-postage">
+      ★ジャンル★
         <%= @post.category.name %>
       </span>
     </div>
@@ -57,14 +62,15 @@
       </button>
     </form>
   </div>
+
   <div class="links">
-    <a href="#" class="change-item-btn">
-      ＜ 前の商品
-    </a>
-    <a href="#" class="change-item-btn">
-      後ろの商品 ＞
-    </a>
-  </div>
+  <% if @prev_post.present? %>
+    <%= link_to "＜ 前の投稿", post_path(@prev_post), class:"change-item-btn" %>
+  <% end %>
+  <% if @next_post.present? %>
+    <%= link_to "後ろの投稿 ＞", post_path(@next_post), class:"change-item-btn" %>
+  <% end %>
+</div>
   <a href="#" class="another-item"><%= @post.user.nickname %>の投稿をもっと見る</a>
 </div>
 

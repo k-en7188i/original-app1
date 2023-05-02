@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
+  before_action :set_item, only: [:edit, :show, :update, :destroy]
 
   def index
     # @posts = Post.all
@@ -22,29 +23,36 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
+    
     @posts = Post.all.includes(:user)
     @user = @post.user
+
+    @prev_post = Post.where("id < ?", @post.id).order("id DESC").first
+    @next_post = Post.where("id > ?", @post.id).order("id ASC").first
   end
 
   def destroy
-    post = Post.find(params[:id])
-    post.destroy
+    
+    @post.destroy
   end
   
   def edit
-   @post = Post.find(params[:id])
+   
   end
 
   def update
-    post = Post.find(params[:id])
-    post.update(post_params)
+    
+    @post.update(post_params)
   end
 
   private
 
-    def post_params
-      params.require(:post).permit(:title, :content, :urllink, :category_id, :image).merge(user_id: current_user.id)
-    end
+  def set_item
+    @post = Post.find(params[:id])
+  end
+
+  def post_params
+    params.require(:post).permit(:title, :content, :urllink, :category_id, :image).merge(user_id: current_user.id)
+  end
 
 end

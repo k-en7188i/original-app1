@@ -54,7 +54,7 @@
         </a>
         <% if user_signed_in? %>
         <div class="fw-bold "><a>Now-Login  :</a></div>
-        <a><%= link_to current_user.nickname, "/users/#{current_user.id}", class: "fw-bold btn-outline-secondary" %></a>
+        <a><%= link_to current_user.nickname, user_path(current_user), class: "fw-bold btn-outline-secondary" %></a>
         <%# <a class="btn btn-sm btn-outline-secondary" href="#">Log out</a> %>
         <a><%= link_to 'Log out', destroy_user_session_path, method: :delete, class: "btn btn-sm fw-bold btn-outline-secondary ms-3" %> </a>
         
