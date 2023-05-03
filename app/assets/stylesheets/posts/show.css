@@ -45,6 +45,8 @@
   .item-price-box>.item-price {
     font-size: 4vh;
     font-weight: bold;
+    max-width: 60ch;
+
   }
 
   .item-price-box>.item-postage {
