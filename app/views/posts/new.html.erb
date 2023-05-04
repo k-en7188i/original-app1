@@ -5,7 +5,7 @@
   </header>
   <div class="items-sell-main">
     <h2 class="items-sell-title">オススメを入力</h2>
-    <%= form_with model: @post, url:posts_path, local: true do |f| %>
+    <%= form_with model: @post, url:posts_path, id: "new_post",local: true do |f| %>
 
     <%= render 'shared/error_messages', model: f.object %>
 
@@ -19,6 +19,7 @@
         <p>
           クリックしてファイルをアップロード
         </p>
+        <div id="previews"></div>
         <%= f.file_field :image, id:"post-image" %>
       </div>
     </div>
