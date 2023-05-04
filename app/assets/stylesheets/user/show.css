@@ -1,7 +1,4 @@
 
-/* @media screen and (max-width: 767px) { */
-  /* 画面幅が767px以下の場合に適用 */
-
   .row {
     font-weight: bold;
     font-size: 24px;
@@ -192,9 +189,13 @@
     align-items: center; */
     position: absolute;
     /* left: 70%; */
+    /* font-size: 18px; */
     top: 10%;
-    transform: translate(50%, 20%);
+    transform: translate(38%, 20%);
     max-width: 60ch;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-all;
     color: #e4e0e0;
     -webkit-text-stroke: 1px rgb(16, 3, 3);
     text-stroke: 1px rgb(10, 5, 5);
@@ -209,4 +210,12 @@
     width: 20%;
 } */
 
-/* } */
+/* スマホ表示時 */
+
+/* @media screen and (max-width: 599px) {
+  } */
+
+
+/* タブレット表示時 */
+/* @media (max-width: 1024px) {
+} */

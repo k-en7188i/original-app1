@@ -12,11 +12,11 @@
     </div>
     <div class="item-price-box">
     <%# 以下の記述は枠がないのではみ出る %>
-      <%# <span class="item-price"> %>
-          <%#= @post.content %>
-      <%# </span> %>
+      <p class="item-price">
+          <%= @post.content %>
+      </p>
       <%# 以下は後日試してみる（マイページ、詳細ページ） %>
-      <textarea name="post[content]" rows="10" cols="50"><%= @post.content %></textarea>
+      <%# <textarea name="post[content]" rows="10" cols="50">= @post.content</textarea> %>
 
       <span class="item-postage">
       ★リンク先URL★
