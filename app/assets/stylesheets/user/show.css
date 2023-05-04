@@ -109,17 +109,20 @@
     color: #333;
   }
 
-  div.contents.row div.content_post p {
+  div.contents.row div.content_post .content {
     position: absolute;
-    left: 30px;
+    top: 0;
+    /* left: 0; */
     right: 100px;
-    bottom: 30px;
-    margin: 0;
-    font-size: 20px;
-    z-index: 2;
-    font-weight: bold;
-    text-shadow: 0 0 2px #000, 0 0 1px #000, 0 0 1px #000;
+    bottom: 0;
+    margin: auto;
+    max-width: 60%;
+    max-height: 80%;
+    overflow: auto;
+    padding: 10px;
+    text-align: center;
   }
+  
 
   div.contents.row div.content_post span.name {
     position: absolute;
@@ -182,26 +185,24 @@
     z-index: 1;
   }
 
-  .content_post .content {
-    /* text-align: center; */
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
+  div.contents.row div.content_post .content-wrapper {
     position: absolute;
-    /* left: 70%; */
-    /* font-size: 18px; */
-    top: 10%;
-    transform: translate(38%, 20%);
-    max-width: 60ch;
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-    word-break: break-all;
-    color: #e4e0e0;
-    -webkit-text-stroke: 1px rgb(16, 3, 3);
-    text-stroke: 1px rgb(10, 5, 5);
-
+    left: 30px;
+    right: 100px;
+    bottom: 30px;
+    margin: 0;
+    z-index: 2;
+    height: 60%;
+    overflow-y: auto;
   }
-
+  
+  div.contents.row div.content_post .content-wrapper p.content {
+    font-size: 20px;
+    font-weight: bold;
+    text-shadow: 0 0 2px #000, 0 0 1px #000, 0 0 1px #000;
+  }
+  
+  
   div.contents.row div.content_post span {
     color: #100f0f;
   }
@@ -210,12 +211,15 @@
     width: 20%;
 } */
 
-/* スマホ表示時 */
 
-/* @media screen and (max-width: 599px) {
-  } */
+/* スマホ,タブレット表示時 レスポンシブ対応*/
 
-
-/* タブレット表示時 */
-/* @media (max-width: 1024px) {
-} */
+@media screen and (max-width: 600px) {
+  div.contents.row div.content_post .content-wrapper {
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    height: auto;
+    /* color: #000; */
+  }
+}

@@ -7,7 +7,9 @@
       <%#= render locals: { post: post } %> 
     <div class="content_post" style="background-image: url(<%= post.image %>);">
         <%= image_tag post.image, class: "post-img" if post.image.attached? %>
-      <p class="content"><%= post.content %></p>
+      <div class="content-wrapper">
+        <p class="content"><%= post.content %></p>
+      </div>
       <div class="more">
         <span><%= image_tag 'star.png' %></span>
         <ul class="more_list">
