@@ -5,7 +5,7 @@
   </header>
   <div class="items-sell-main">
     <h2 class="items-sell-title">オススメを入力</h2>
-    <%= form_with model: @post, local: true do |f| %>
+    <%= form_with model: @post, id: "new_post", local: true do |f| %>
 
     <%= render 'shared/error_messages', model: f.object %>
 
@@ -16,7 +16,7 @@
         <span class="indispensable">必須</span>
       </div>
       <div class="click-upload">
-      
+
         <div class="img-upload">
           <div id="previews"></div>
         </div>

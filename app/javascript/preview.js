@@ -5,8 +5,8 @@ document.addEventListener('DOMContentLoaded', function(){
   const previewList = document.getElementById('previews');
   console.log("preview.jsが読み込まれました");
   // 新規投稿・編集ページのフォームがないならここで終了。「!」は論理否定演算子。
-  // if (!postForm) return null;
-  // console.log("preview.jsに投稿されました");
+  if (!postForm) return null;
+  console.log("preview.jsに投稿されました");
   
   // input要素を取得
   const fileField = document.querySelector('input[type="file"][name="post[image]"]');
