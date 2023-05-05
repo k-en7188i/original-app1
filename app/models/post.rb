@@ -17,7 +17,7 @@ class Post < ApplicationRecord
     likes.where(user_id: user.id).exists?
   end
 
-  # def likes_count
-  #   likes.count
-  # end
+  def likes_count
+    likes.count
+  end
 end

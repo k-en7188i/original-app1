@@ -159,8 +159,11 @@
           </div>
         <% end %>
         <div class='star-btn'>
-          <%= image_tag "star.png", class:"star-icon" %>
-          <span class='star-count'>0</span>
+
+          <%# 下記、星マークは将来的にお気に入り機能になる予定です。 %>
+          <%#= image_tag "star.png", class:"star-icon" %>
+          
+          <%# 下記、星マークは将来ハートマーク(FontAwesome)に変更予定です。 %>
           <div id="like-btn<%= post.id %>">
             <%= render partial: "likes/like", locals: { post: post } %>
           </div>
