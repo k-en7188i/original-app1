@@ -62,7 +62,7 @@
           </form>
         </div> %>
 
-        
+
         <% if user_signed_in? %>
         <div class="fw-bold "><a>Now-Login  :</a></div>
         <a><%= link_to current_user.nickname, user_path(current_user), class: "fw-bold btn-outline-secondary" %></a>
@@ -172,7 +172,8 @@
         <div class='star-btn'>
 
           <%# 下記、星マークは将来的にお気に入り機能になる予定です。 %>
-          <%#= image_tag "star.png", class:"star-icon" %>
+          <%= image_tag "star.png", class:"star-icon" %>
+          ↑フォロー↑
           
           <%# 下記、星マークは将来ハートマーク(FontAwesome)に変更予定です。 %>
           <div id="like-btn<%= post.id %>">
