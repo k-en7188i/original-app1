@@ -6,3 +6,6 @@
   <%=link_to "●", post_likes_path(post.id), method: :post, class: "star-icon", remote: true %>
 <% end %>
 <span class="like-count"><%= post.likes_count %></span>
+
+<%# 使用したい画像をassets/imagesフォルダに保存します。例えば、imagesフォルダにstar.pngという名前の画像を保存した場合 %>
+<%#= link_to image_tag("ここに画像"), post_likes_path(post.id), method: :delete, class: "star-icon", remote: true %>

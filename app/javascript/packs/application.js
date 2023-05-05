@@ -11,6 +11,7 @@ import "bootstrap"
 import "../stylesheets/application"
 // require("../main")
 require("../preview")
+require("../search")
 
 
 

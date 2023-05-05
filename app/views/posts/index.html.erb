@@ -52,6 +52,13 @@
         <a class="link-secondary" href="#" aria-label="Search">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="mx-3" role="img" viewBox="0 0 24 24"><title>Search</title><circle cx="10.5" cy="10.5" r="7.5"/><path d="M21 21l-5.2-5.2"/></svg>
         </a>
+        <%# 検索機能 %>
+        <%# <div id="search-form-wrapper" style="display:none;">
+          <form action="<%= search_tweets_path %>" method="get" class="search-form">
+            <input type="text" name="keyword" placeholder="投稿を検索する" class="search-input">
+            <button type="submit" class="search-btn">検索</button>
+          </form>
+        </div> %>
         <% if user_signed_in? %>
         <div class="fw-bold "><a>Now-Login  :</a></div>
         <a><%= link_to current_user.nickname, user_path(current_user), class: "fw-bold btn-outline-secondary" %></a>
