@@ -159,12 +159,12 @@
           </div>
         <% end %>
         <div class='star-btn'>
-        <%= image_tag "star.png", class:"star-icon" %>
-        <span class='star-count'>0</span>
-        <div id="like-btn<%= post.id %>">
-          <%= render partial: "likes/like", locals: { post: post } %>
+          <%= image_tag "star.png", class:"star-icon" %>
+          <span class='star-count'>0</span>
+          <div id="like-btn<%= post.id %>">
+            <%= render partial: "likes/like", locals: { post: post } %>
+          </div>
         </div>
-      </div>
         <%# <div class='star-btn'> %>
           <%#= image_tag "star.png", class:"star-icon" %>
           <%# <span class='star-count'>0</span>
