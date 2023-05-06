@@ -272,7 +272,7 @@ h1, h2, h3, h4, h5, h6 {
 } */
 
 /* 768px以下の画面幅の場合 */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 599px) {
   .blog-header {
     display: flex;
     flex-direction: column;
@@ -331,6 +331,17 @@ h1, h2, h3, h4, h5, h6 {
   .item-contents>.title {
     font-size: 3.5vh;
   }
+
+  /* 投稿ボタンのサイズを変更 */
+  
+    .purchase-btn-icon {
+      width: 25px;
+      height: 15px;
+    }
+    .purchase-btn-text {
+      font-size: 16px;
+    }
+  
 }
 
 
