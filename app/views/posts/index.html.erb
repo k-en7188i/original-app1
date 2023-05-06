@@ -61,7 +61,7 @@
         <div id="search-modal" class="modal">
           <div class="modal-content">
             <%= form_with url: search_posts_path, local: true, method: :get, class: "search-form" do |form| %>
-              <%= form.text_field :title, placeholder: "投稿を検索する", class: "search-input" %>
+              <%= form.text_field  :title, placeholder: "投稿を検索する", class: "search-input" %>
               <%= form.submit "検索", class: "search-btn" %>
             <% end %>
           </div>
