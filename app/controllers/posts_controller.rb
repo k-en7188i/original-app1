@@ -45,6 +45,10 @@ class PostsController < ApplicationController
     @post.update(post_params)
   end
 
+  def search
+    @posts = Post.search(params[:title])
+  end
+
   private
 
   def set_item

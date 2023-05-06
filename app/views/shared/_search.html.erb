@@ -1,0 +1,45 @@
+
+<div class="list">
+  <% @posts.each do |post| %>
+      <%# <li class='list'> %>
+        <%= link_to post_path(post.id) do %>
+          <div class='item-img-content'>
+            <%= image_tag post.image, class: "item-img" if post.image.attached?%>
+          </div>
+          <div class="user-nickname"><%= post.user.nickname %></div>
+          
+          <div class='item-info'>
+            <h3 class='item-name'>
+              <%= post.title %>
+            </h3>
+            <div class='item-price'>
+              <span><%#= post.content %></span>
+            </div>
+          </div>
+        <% end %>
+        <div class='star-btn'>
+
+          <%# 下記、星マークは将来的にお気に入り機能になる予定です。 %>
+          <%= image_tag "star.png", class:"star-icon" %>
+          ↑フォロー↑
+          
+          <%# 下記、星マークは将来ハートマーク(FontAwesome)に変更予定です。 %>
+          <div id="like-btn<%= post.id %>">
+            <%= render partial: "likes/like", locals: { post: post } %>
+          </div>
+        </div>
+        <%# <div class='star-btn'> %>
+          <%#= image_tag "star.png", class:"star-icon" %>
+          <%# <span class='star-count'>0</span>
+        </div> %>
+      <%# </li> %>
+    <% end %>
+</div>
+    <div class="contents row">
+  <div class="success">
+    
+    <a class="btn" href="/">投稿一覧へ戻る</a>
+    
+     <%= link_to "マイページへ戻る", user_path(current_user), class: "btn" %>
+  </div>
+</div>

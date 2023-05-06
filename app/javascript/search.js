@@ -1,11 +1,14 @@
-document.addEventListener('DOMContentLoaded', function() {
-  // ここにコードが続きます
-  console.log("search.jsが読み込まれました");
-  // $(document).ready(function() {
-  //   $(".link-secondary").click(function(e) {
-  //     e.preventDefault();
-  //     $("#search-form-wrapper").toggle();
-  //   });
-  // });
+window.onload = function() {
+  const searchModal = document.getElementById('search-modal');
+  const searchIcon = document.getElementById('search-icon');
+
+  searchIcon.onclick = function() {
+    searchModal.style.display = "block";
+  }
   
-});
+  window.onclick = function(e) {
+    if (e.target == searchModal) {
+      searchModal.style.display = "none";
+    }
+  }
+}

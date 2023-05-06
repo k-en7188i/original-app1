@@ -31,6 +31,59 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+/* 検索マーククリック後のモーダルのサイズを変更 */
+
+/* サイズを変更する場合は、以下のようにwidthとheightを調整してください */
+/* 例: 50%幅、300px高さ */
+
+.modal {
+  display: none; /* 初期状態では非表示 */
+  position: fixed; /* モーダルを固定位置にする */
+  top: 0;
+  left: 0;
+  width: 100%; /* 画面全体を覆う */
+  height: 100%;
+  background-color: rgba(0,0,0,0.4); /* 背景を暗くする */
+  z-index: 999; /* 表示順を最前面にする */
+}
+
+.modal-content {
+  position: absolute; /* モーダルの中心位置を設定する */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%; /* モーダルの幅 */
+  max-width: 600px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
+}
+
+.modal-content {
+  width: 50%;
+  height: 200px;
+  padding: 75px 0;
+}
+
+.search-input {
+  width: 400px; /* 例として300pxに設定 */
+  height: 50px; /* 例として50pxに設定 */
+  /* その他のスタイル */
+  margin-left: 30px;
+}
+
+.search-btn {
+  width: 100px; /* 例として100pxに設定 */
+  height: 50px; /* 例として50pxに設定 */
+  /* その他のスタイル */
+  margin-left: 30px;
+  background-color: #da7979;;
+}
+
+/* 以上、モーダルの変更 */ */
+
+
 .nav-scroller {
   position: relative;
   z-index: 2;
