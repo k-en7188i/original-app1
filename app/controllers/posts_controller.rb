@@ -23,25 +23,21 @@ class PostsController < ApplicationController
   end
 
   def show
-    
     @posts = Post.all.includes(:user)
     @user = @post.user
 
-    @prev_post = Post.where("id < ?", @post.id).order("id DESC").first
-    @next_post = Post.where("id > ?", @post.id).order("id ASC").first
+    @prev_post = Post.where('id < ?', @post.id).order('id DESC').first
+    @next_post = Post.where('id > ?', @post.id).order('id ASC').first
   end
 
   def destroy
-    
     @post.destroy
   end
-  
+
   def edit
-   
   end
 
   def update
-    
     @post.update(post_params)
   end
 
@@ -58,5 +54,4 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:title, :content, :urllink, :category_id, :image).merge(user_id: current_user.id)
   end
-
 end
