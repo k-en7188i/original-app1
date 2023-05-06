@@ -6,6 +6,7 @@
 .blog-header {
   line-height: 1;
   border-bottom: 1px solid #e5e5e5;
+  overflow-y: hidden;
 }
 
 .blog-header-logo {
@@ -217,6 +218,10 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 2vh;
 }
 
+.p-4 {
+  overflow-y: hidden;
+}
+
 
 /* 以上、投稿一覧 */
 
@@ -248,3 +253,91 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 14px;
   color: #333;
 }
+
+/* レスポンシブ対応*/
+/* 768px以上の画面幅の場合 */
+/* @media screen and (min-width: 768px) {
+  .blog-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+  .blog-header > .col-4 {
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+  }
+} */
+
+/* 768px以下の画面幅の場合 */
+@media screen and (max-width: 600px) {
+  .blog-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    overflow-y: hidden;
+  }
+  .blog-header > .col-4 {
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+
+  /* ヘッダーのロゴのサイズを変更 */
+  .apple-btn {
+    max-width: 80px; /* 画像の最大幅を100pxに指定 */
+  }
+
+/* ヘッダーのレイアウトを変更 */ 
+  .col-4 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .d-flex.justify-content-end {
+    justify-content: flex-start !important;
+  }
+
+  .search-form,
+  .login-form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .search-form .search-input,
+  .login-form .login-input {
+    flex: 0 0 calc(100% - 70px);
+    margin-right: 10px;
+  }
+
+  .search-form .search-btn,
+  .login-form .login-btn {
+    flex: 0 0 60px;
+  }
+
+  .search-form .search-btn svg,
+  .login-form .login-btn svg {
+    height: 20px;
+    width: 20px;
+  }
+
+  /* ピックアップカテゴリーの文字サイズを変更 */
+  .item-contents>.title {
+    font-size: 3.5vh;
+  }
+}
+
+
+
+
+
+
+
+
+

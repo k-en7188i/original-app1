@@ -41,9 +41,9 @@
     
 <div class="container">
   <header class="blog-header py-3">
-    <div class="row flex-nowrap justify-content-between align-items-center">
+    <div class="d-flex justify-content-around align-items-center">
       <div class="col-4 pt-1">
-        <a class="link-secondary" href="#"><%= link_to image_tag("header-post_logo.png", size: '120x100',class:"apple-btn"), new_post_path %></a>
+        <a class="link-secondary" href="#"><%= link_to image_tag("header-post_logo.png", size: '90x80',class:"apple-btn"), new_post_path %></a>
       </div>
       <div class="col-4 text-center">
         <a class="blog-header-logo text-dark" href="#"><%= link_to image_tag("header-main.png", class:"apple-btn"), "#" %></a>
@@ -350,7 +350,7 @@
       <li class="me-3"><a href="#" class="link-secondary ">Jul-2020</a></li>
       <li class="me-3"><a href="#" class="link-secondary ">Jun-2020</a></li>
       <li class="me-3"><a href="#" class="link-secondary ">May-2020</a></li>
-      <li><a href="#" class="link-secondary ">Apr:2020</a></li>
+      <li class="me-3"><a href="#" class="link-secondary ">Apr-2020</a></li>
     </ul>
   </div>
   <%= link_to new_post_path, class: 'purchase-btn' do %>
