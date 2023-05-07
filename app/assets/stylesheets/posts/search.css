@@ -1,6 +1,10 @@
-/* .item-img-search {
+.search-form {
   text-align: center;
-  width: 50%;
-  height: 50%;
+  margin-top: 50px;
+}
+
+.item-img {
+  width: 500px;
+  height: 400px;
   object-fit: cover;
-} */
+}
