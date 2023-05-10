@@ -231,15 +231,19 @@
   .comments h4 {
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 28px;
     color: #727272;
     margin: 0;
     padding: 10px;
     text-align: center;
     /* border-bottom: solid 2px #fff; */
   }
-
+  
   .text {
+    /* display: flex;
+    justify-content: space-around; */
+    font-size: 20px;
+    border-bottom: solid 2px #fff;
     color: #727272;
     text-decoration: none;
   }
@@ -248,5 +252,9 @@
     color: #000;
     text-decoration: none;
   }
+  .delete-comment {
+  font-size: 8px;
+  display: inline-block;
+}
 
 /* } */
