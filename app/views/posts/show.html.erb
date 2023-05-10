@@ -74,6 +74,10 @@
         <p class="text">
           <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" ,class: "white-link"%>：</strong>
           <%= comment.text %>
+          <span class="delete-comment">
+            <%= button_to '上のコメントを削除', post_comment_path(comment.post, comment), method: :delete, data: { confirm: '本当に削除しますか？' } %>
+          </span>
+
         </p>
       <% end %>
     </div>
