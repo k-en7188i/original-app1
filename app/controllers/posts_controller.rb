@@ -26,6 +26,9 @@ class PostsController < ApplicationController
     @posts = Post.all.includes(:user)
     @user = @post.user
 
+    @comment = Comment.new
+    @comments = @post.comments.includes(:user)
+
     @prev_post = Post.where('id < ?', @post.id).order('id DESC').first
     @next_post = Post.where('id > ?', @post.id).order('id ASC').first
   end

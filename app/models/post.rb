@@ -3,6 +3,7 @@ class Post < ApplicationRecord
   belongs_to :category
 
   belongs_to :user
+  has_many :comments  # commentsテーブルとのアソシエーション
   has_many :likes
 
   has_one_attached :image
