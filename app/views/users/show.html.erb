@@ -3,7 +3,6 @@
 <div class="contents row">
   <p class="nickname"><%= @nickname %>さんの投稿一覧</p>
 
-      <p>お気に入り一覧</p>
 
   <%# お気に入り一覧 %>
   <%# <div class="more">
@@ -47,10 +46,13 @@
       </div>
       <span class="name">
         <a href="/users/<%= post.user.id %>">
-          <%# <span>投稿者</span> %>
-          <%= post.user.nickname %>
+          <%#= post.user.nickname %>
         </a>
+          <span>投稿日</span>
        <span><%= post.created_at.strftime('%Y/%m/%d')%></span>
+      <%# <p>お気に入り</p> %>
+      <%= link_to image_tag('star.png'), root_path %>
+      <span>お気に入りされた数</span>
       </span>
       
 
