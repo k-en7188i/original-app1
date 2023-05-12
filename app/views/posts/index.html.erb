@@ -176,7 +176,7 @@
         <% end %>
         <div class='star-btn'>
             <%# 下記、星マークは将来的にお気に入り機能になる予定です。 %>
-            <%= image_tag "LogoMakr-0jQVdE.png", class:"star-icon" %>
+            <%= image_tag "header-post_logo.png",  size: "25x25", class:"star-icon" %>
             <%# ↑フォロー↑ %>
             
           <% unless current_user == @user %>
@@ -185,14 +185,12 @@
               <%= render partial: "likes/like", locals: { post: post } %>
             </div>
           <% end %>
-        <% if user_signed_in? %>
-          <% favorite = current_user.favorites.find_by(post: post) %>
-          <% if favorite %>
-            <%= button_to 'お気に入りから削除', post_favorite_path(post, favorite), method: :delete %>
-          <% else %>
-            <%= button_to 'お気に入りに追加', post_favorites_path(post), method: :post %>
+
+          <% if user_signed_in? %>
+          
+            <%= render partial: "posts/favorite", locals: { post: post } %>
           <% end %>
-        <% end %>
+
         </div>
 
 
