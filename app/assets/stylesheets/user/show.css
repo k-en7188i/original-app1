@@ -69,7 +69,7 @@
     z-index: 2;
     height: 100px;
     width: 80px;
-    text-align: right;
+    text-align: center;
   }
 
   div.contents.row div.content_post .more:hover ul.more_list {
@@ -81,7 +81,7 @@
     text-align: left;
     width: 80px;
     right: 0;
-    font-size: 12px;
+    font-size: 16px;
     background-color: #fff;
     border: 1px solid #ddd;
     display: none;
@@ -99,6 +99,7 @@
 
   div.contents.row div.content_post .more ul.more_list li a {
     display: block;
+    font-size: 15px;
     padding: 5px;
     text-decoration: none;
     color: #727272;
@@ -212,9 +213,10 @@
 } */
 
 /* 投稿者名を下に移動したいができない */
-/* .name {
-  margin-top: 50px;
-} */
+.name {
+  /* margin-top: 50px; */
+  text-align: center;
+}
 
 /* スマホ,タブレット表示時 レスポンシブ対応*/
 
