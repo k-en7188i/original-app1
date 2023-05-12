@@ -4,7 +4,11 @@ class Post < ApplicationRecord
 
   belongs_to :user
   has_many :comments  # commentsテーブルとのアソシエーション
+  # いいね機能
   has_many :likes
+# お気に入り機能
+  has_many :favorites, dependent: :destroy
+  has_many :users, through: :favorites
 
   has_one_attached :image
 
