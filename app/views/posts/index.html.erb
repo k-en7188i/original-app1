@@ -185,11 +185,23 @@
               <%= render partial: "likes/like", locals: { post: post } %>
             </div>
           <% end %>
+        <% if user_signed_in? %>
+          <% favorite = current_user.favorites.find_by(post: post) %>
+          <% if favorite %>
+            <%= button_to 'お気に入りから削除', post_favorite_path(post, favorite), method: :delete %>
+          <% else %>
+            <%= button_to 'お気に入りに追加', post_favorites_path(post), method: :post %>
+          <% end %>
+        <% end %>
         </div>
+
+
+
+        
           <%# <div class='star-btn'> %>
             <%#= image_tag "star.png", class:"star-icon" %>
-            <%# <span class='star-count'>0</span>
-          </div> %>
+            <%# <span class='star-count'>0</span> %>
+          <%# </div> %>
         </li>
     <% end %>
     <%# </div> %>
