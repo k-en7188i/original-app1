@@ -1,7 +1,20 @@
-<h1><%= @user.username %>のお気に入り一覧</h1>
+<%# 以下の記述を後日修正する %>
+
+<h1><%= @user.nickname %>のお気に入り一覧</h1>
 
 <ul>
-  <% @favorite_posts.each do |post| %>
-    <li><%= post.name %>（<%= link_to '詳細', post_path(post) %>）</li>
+  <% @favorite_posts.each do |favorite| %>
+    <li><%= favorite.post.title %>（<%= link_to '詳細', post_path(favorite.post) %>）</li>
   <% end %>
+
 </ul>
+
+<%# 以下の記述を後日修正する %>
+
+
+<div class="sell-btn-contents">
+    <%=link_to '戻る', root_path, class:"back-btn" %>
+  </div>
+</div>
+
+<%= render "shared/second-footer" %>
