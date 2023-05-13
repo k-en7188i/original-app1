@@ -1,0 +1,8 @@
+<% if user_signed_in? && current_user != post.user %>
+  <% favorite = current_user.favorites.find_by(post: post) %>
+  <% if favorite %>
+    <%= link_to image_tag("favorite.png", size: "25x25"), post_favorite_path(post, favorite), method: :delete, remote: true, class: 'favorite',  id: "favorite-link-#{post.id}" %>
+  <% else %>
+    <%= link_to image_tag("nonFavorite.png", size: "25x25"), post_favorites_path(post), method: :post, remote: true, class: 'favorite',  id: "favorite-link-#{post.id}" %>
+  <% end %>
+<% end %>
