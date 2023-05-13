@@ -1,0 +1,2 @@
+console.log("favorite created");
+document.getElementById('favorite-link-<%= @post.id %>').outerHTML = "<%= j(render('posts/favorite', post: @post)) %>";
