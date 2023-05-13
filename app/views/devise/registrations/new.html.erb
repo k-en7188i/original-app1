@@ -68,13 +68,14 @@
       <label class="form-text">性別</label>
       <span class="indispensable">必須</span>
     </div>
-    <%= f.text_area :gender, class:"input-default", id:"gender", placeholder:"例) 男(Gentleman)/女(Lady)/その他(Others)" %>
+    <%#= f.text_area :gender, class:"input-default", id:"gender", placeholder:"例) 男(Gentleman)/女(Lady)/その他(Others)" %>
+    <%= f.collection_select(:gender_id, Gender.all, :id, :name, {}, {class:"input-default", id:"gender"}) %>
   </div>
 
   <div class="form-group">
     <div class='form-text-wrap'>
       <label class="form-text">電話番号</label>
-      <p class="indispensable">任意</p>
+      <%# <span class="indispensable">任意</span> %>
     </div>
     <%= f.text_area :phone_number, class:"input-default", id:"phone_number", placeholder:"例：0x0△△△△xxxx" %>
   </div>
