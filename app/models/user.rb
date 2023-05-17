@@ -25,7 +25,7 @@ class User < ApplicationRecord
     validates :nickname, presence: true
     validates :password, length: { minimum: 6 }, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i }
     validates :birth_date, presence: true
-    validates :gender, presence: true, numericality: { other_than: 1, message: "can't be blank" }
+    validates :gender_id, presence: true, numericality: { other_than: 1, message: "can't be blank" }
 
 
 
