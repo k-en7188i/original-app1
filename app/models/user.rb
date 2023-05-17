@@ -14,6 +14,9 @@ class User < ApplicationRecord
     has_many :comments  # commentsテーブルとのアソシエーション
     has_many :likes
 
+    # ランキング機能
+    # has_many :liked_posts, through: :likes, source: :post
+
     has_many :favorites, dependent: :destroy
 
     has_many :favorite_posts, through: :favorites, source: :post

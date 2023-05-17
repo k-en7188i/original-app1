@@ -9,6 +9,10 @@ class Post < ApplicationRecord
   # いいね機能
   has_many :likes
 
+  # ランキング機能
+  # has_many :liked_users, through: :likes, source: :user
+
+
   # お気に入り機能
   has_many :favorites, dependent: :destroy
   has_many :users, through: :favorites
@@ -20,6 +24,11 @@ class Post < ApplicationRecord
   validates :title, :content, :urllink, presence: true
   # ジャンルの選択が「---」の時は保存できないようにする
   validates :category_id, numericality: { other_than: 1, message: "can't be blank" }
+
+  # ランキング機能
+  # def self.ranking
+  #   self.left_joins(:likes).group(:id).order('COUNT(likes.id) DESC')
+  # end
 
   # いいね機能
   def liked_by?(user)
