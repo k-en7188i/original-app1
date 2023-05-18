@@ -12,6 +12,7 @@ import "../stylesheets/application"
 // require("../main")
 require("../preview")
 require("../search")
+// require("../external")
 
 
 
