@@ -10,7 +10,7 @@ class User < ApplicationRecord
     belongs_to :gender
     
 
-    has_many :posts
+    has_many :posts, dependent: :destroy
     has_many :comments  # commentsテーブルとのアソシエーション
     has_many :likes
 
@@ -20,6 +20,10 @@ class User < ApplicationRecord
     has_many :favorites, dependent: :destroy
 
     has_many :favorite_posts, through: :favorites, source: :post
+
+
+    # ActiveStorageの記述/ユーザー登録時の画像投稿準備
+    # has_one_attached :image
 
     # バリデーションの記述
     validates :nickname, presence: true
