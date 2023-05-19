@@ -43,19 +43,13 @@
   <header class="blog-header py-3">
     <div class="d-flex justify-content-around align-items-center">
       <div class="col-4 pt-1">
-        <a class="link-secondary" href="#"><%= link_to image_tag("header-post_logo.png", size: '80x70',class:"apple-btn"), new_post_path %></a>
+        <a class="link-secondary" href="#"><%#= link_to image_tag("header-post_logo.png", size: '80x70',class:"apple-btn"), new_post_path %></a>
       </div>
       <div class="col-4 text-center">
         <a class="blog-header-logo text-dark" href="#"><%= link_to image_tag("header-main.png", class:"apple-btn"), "#" %></a>
       </div>
       <div class="col-4 d-flex justify-content-end align-items-center">
-        <a id="search-icon" class="link-secondary" href="#" aria-label="Search">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="mx-3" role="img" viewBox="0 0 24 24">
-            <title>Search</title>
-            <circle cx="10.5" cy="10.5" r="7.5"/>
-            <path d="M21 21l-5.2-5.2"/>
-          </svg>
-        </a>
+        
 
 
         <div id="search-modal" class="modal">
@@ -87,31 +81,36 @@
   </header>
   <%# 新ヘッダー候補 %>
 
-  <%# <header class="py-3 mb-3 border-bottom">
+  <header class="py-3 mb-3 border-bottom">
     <div class="container-fluid d-grid gap-3 align-items-center" style="grid-template-columns: 1fr 2fr;">
       <div class="dropdown">
         <a href="#" class="d-flex align-items-center col-lg-4 mb-2 mb-lg-0 link-dark text-decoration-none dropdown-toggle" id="dropdownNavLink" data-bs-toggle="dropdown" aria-expanded="false">
           <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
         </a>
         <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownNavLink">
-          <li><a class="dropdown-item active" href="#" aria-current="page">Overview</a></li>
-          <li><a class="dropdown-item" href="#">Inventory</a></li>
-          <li><a class="dropdown-item" href="#">Customers</a></li>
-          <li><a class="dropdown-item" href="#">Products</a></li>
+          <li><%= link_to 'POST', new_post_path, class: "dropdown-item" %></li>
+          <li><a class="dropdown-item active" href="#" aria-current="page">RANKING</a></li>
+          <li><a class="dropdown-item" href="#">PRIZE-WINNERs</a></li>
+          <li><a class="dropdown-item" href="#">POST-LISTs</a></li>
           <li><hr class="dropdown-divider"></li>
-          <li><a class="dropdown-item" href="#">Reports</a></li>
-          <li><a class="dropdown-item" href="#">Analytics</a></li>
+          <li><a class="dropdown-item" href="#">LIKEs</a></li>
+          <li><a class="dropdown-item" href="#">FOVORITEs</a></li>
         </ul>
       </div>
 
-      <div class="d-flex align-items-center">
-        <form class="w-100 me-3">
-          <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
-        </form>
-
+      <div class="d-flex align-items-center justify-content-end">
+        <div class="ml-auto">
+          <a id="search-icon" class="link-secondary" href="#" aria-label="Search">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="mx-3" role="img" viewBox="0 0 24 24">
+              <title>Search</title>
+              <circle cx="10.5" cy="10.5" r="7.5"/>
+              <path d="M21 21l-5.2-5.2"/>
+            </svg>
+          </a>
+        </div>
         <div class="flex-shrink-0 dropdown">
           <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
-            <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
+            <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">（開発中）
           </a>
           <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">
             <li><a class="dropdown-item" href="#">New project...</a></li>
@@ -119,32 +118,16 @@
             <li><a class="dropdown-item" href="#">Profile</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="#">Sign out</a></li>
+            <li><a class="dropdown-item" href="#">Sign out</a></li>
+            <li><a class="dropdown-item" href="#">Sign out</a></li>
+            <li><a class="dropdown-item" href="#">Sign out</a></li>
           </ul>
         </div>
       </div>
     </div>
-  </header> %>
+  </header>
 
   <%# 新ヘッダー候補 %>
-
-  <div class="nav-scroller py-1 mb-2 ">
-    <nav class="nav d-flex justify-content-around fw-bold ">
-      <a class="p-2 link-secondary " href="#">RANKING</a>
-      <a class="p-2 link-secondary " href="#">PRIZE-WINNERs(THIS YEAR)</a>
-      <a class="p-2 link-secondary " href="#">POST-LISTs</a>
-      <a class="p-2 link-secondary " href="#">SEARCH</a>
-      <a class="p-2 link-secondary " href="#">LIKEs</a>
-      <a class="p-2 link-secondary " href="#">FOVORITEs</a>
-      <%# <a class="p-2 link-secondary" href="#">Politics</a>
-      <a class="p-2 link-secondary" href="#">Opinion</a>
-      <a class="p-2 link-secondary" href="#">Science</a>
-      <a class="p-2 link-secondary" href="#">Health</a>
-      <a class="p-2 link-secondary" href="#">Style</a>
-      <a class="p-2 link-secondary" href="#">Travel</a> %>
-    </nav>
-  </div>
-</div>
-
 
 
 <main class="container">
