@@ -203,3 +203,14 @@
   text-align: center;
   cursor: pointer;
 }
+
+/* 会員情報編集画面の戻るボタン */
+.back-btn-edit{
+  background: #aaa;
+  border: 1px solid #aaa;
+  color: #fff;
+  padding: 15px 35%;
+  text-decoration: none;
+  text-align: center;
+}
+
