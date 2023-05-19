@@ -1,14 +1,21 @@
 <%# 以下の記述を後日修正する %>
+<%# <div class='item-contents'> %>
+  <div class="contents row">
+    <p class="nickname"><%= @user.nickname %>のお気に入り一覧</p>
+    
 
-<h1><%= @user.nickname %>のお気に入り一覧</h1>
-
-<ul>
-  <% @favorite_posts.each do |favorite| %>
-    <li><%= favorite.post.title %>（<%= link_to '詳細', post_path(favorite.post) %>）</li>
-  <% end %>
-
-</ul>
-
+      <ul class='item-lists'>
+      <% @favorite_posts.each do |favorite| %>
+        <li class='list'>
+        <%# </li>
+        <li class='list'> %>
+          <%= image_tag(favorite.post.image, alt: 'Post Image', size: "250x250") if favorite.post.image.attached? %>
+          <%= favorite.post.title %>（<%= link_to '詳細', post_path(favorite.post) %>）
+        </li>
+      <% end %>
+      </ul>
+  </div>
+<%# </div> %>
 <%# 以下の記述を後日修正する %>
 
 
