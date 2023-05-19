@@ -23,7 +23,7 @@ class User < ApplicationRecord
 
 
     # ActiveStorageの記述/ユーザー登録時の画像投稿準備
-    # has_one_attached :image
+    has_one_attached :image_profile
 
     # バリデーションの記述
     validates :nickname, presence: true

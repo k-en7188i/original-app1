@@ -110,7 +110,12 @@
         </div>
         <div class="flex-shrink-0 dropdown">
           <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
-            <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">（開発中）
+            <% if @user&.image_profile&.attached? && @user.image_profile.variant(resize: "32x32").processed.present? %>
+              <%= image_tag @user.image_profile.variant(resize: "32x32"), alt: "プロフィール画像", class: "rounded-circle", width: "32", height: "32" %>
+            <% else %>
+              <!-- 画像が存在しない場合の代替表示 -->
+              <%= image_tag "header-post_logo.png", alt: "デフォルトのプロフィール画像", class: "rounded-circle", width: "32", height: "32" %>
+            <% end %>
           </a>
           <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">
             <%# <li><a class="dropdown-item" href="#">New project...</a></li> %>
