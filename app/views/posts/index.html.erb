@@ -54,7 +54,7 @@
           <div class="modal-content">
             <%= form_with url: search_posts_path, local: true, method: :get, class: "search-form" do |form| %>
               <%= form.text_field  :title, placeholder: "投稿を検索する", class: "search-input" %>
-              <%= form.submit "検索", class: "search-btn" %>
+              <%= form.submit "検索", class: "search-btn" %>/
             <% end %>
           </div>
         </div>
@@ -66,8 +66,8 @@
   <header class="py-3 mb-3 border-bottom">
     <div class="container-fluid d-grid gap-3 align-items-center" style="grid-template-columns: 1fr 2fr;">
       <div class="dropdown">
-        <a href="#" class="d-flex align-items-center col-lg-4 mb-2 mb-lg-0 link-dark text-decoration-none dropdown-toggle" id="dropdownNavLink" data-bs-toggle="dropdown" aria-expanded="false">
-          <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
+        <a href="#" class="d-flex align-items-center col-lg-4 mb-2 mb-lg-0 link-dark text-decoration-none " id="dropdownNavLink" data-bs-toggle="dropdown" aria-expanded="false">
+          <span><%= image_tag 'tab1.png', width:"40",height:"40"%></span>
         </a>
         <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownNavLink">
           <li aria-current="page"><%= link_to 'POST', new_post_path, class: "dropdown-item active btn-lg" %></li>
