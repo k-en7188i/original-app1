@@ -7,7 +7,7 @@ class Post < ApplicationRecord
   has_many :comments
 
   # いいね機能
-  has_many :likes
+  has_many :likes, dependent: :destroy
 
   # ランキング機能
   # has_many :liked_users, through: :likes, source: :user

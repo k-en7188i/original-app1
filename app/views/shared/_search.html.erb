@@ -40,10 +40,11 @@
 </main>
 <div class="contents row">
   <div class="success">
-    <a class="btn" href="/">投稿一覧へ戻る</a>
+    <a class="btn" href="/" style="display: block; margin-bottom: 10px;">投稿一覧へ戻る</a>
     
     <% if current_user %>
-      <%= link_to "マイページへ戻る", user_path(current_user), class: "btn" %>
+      <%= link_to "マイページへ戻る", user_path(current_user), class: "btn", style: "display: block;" %>
     <% end %>
   </div>
 </div>
+
