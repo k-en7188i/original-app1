@@ -197,20 +197,20 @@
         <% end %>
         <div class='star-btn'>
             <%# 下記、星マークは将来的にお気に入り機能になる予定です。 %>
-            <%= image_tag "header-post_logo.png",  size: "25x25", class:"star-icon" %>
+            <%#= image_tag "header-post_logo.png",  size: "25x25", class:"star-icon" %>
             <%# ↑フォロー↑ %>
             
-          <%# unless current_user == @user %>
+          <% if user_signed_in? %>
             <%# 下記、星マークは将来ハートマーク(FontAwesome)に変更予定です。 %>
             <div id="like-btn<%= post.id %>">
               <%= render partial: "likes/like", locals: { post: post } %>
             </div>
-          <%# end %>
+          <% end %>
 
-          <%# if user_signed_in? %>
+          <% if user_signed_in? %>
           
             <%= render partial: "posts/favorite", locals: { post: post } %>
-          <%# end %>
+          <% end %>
 
         </div>
 
