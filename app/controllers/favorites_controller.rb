@@ -13,13 +13,12 @@ class FavoritesController < ApplicationController
   def destroy
     @post = Post.find(params[:post_id])
     @favorite = current_user.favorites.find_by(post: @post)
-    if @favorite
-      @favorite.destroy
-      respond_to do |format|
-        format.html { redirect_to @post, notice: 'お気に入りから削除しました。' }
-        format.js
-      end
+    return unless @favorite
+
+    @favorite.destroy
+    respond_to do |format|
+      format.html { redirect_to @post, notice: 'お気に入りから削除しました。' }
+      format.js
     end
   end
 end
-

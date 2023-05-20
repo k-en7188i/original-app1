@@ -6,13 +6,11 @@ class PostsController < ApplicationController
     # @posts = Post.all
     # @user = @post.user
     @posts = Post.all.includes(:user)
-    
 
-    @user = current_user  # サインインしているユーザーを取得するために、current_userを使用します
+    @user = current_user # サインインしているユーザーを取得するために、current_userを使用します
 
     # ランキング機能
     # @ranking_posts = Post.ranking.limit(10)  # ランキング上位10件を取得
-    
   end
 
   def new

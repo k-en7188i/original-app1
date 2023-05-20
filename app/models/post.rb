@@ -4,14 +4,13 @@ class Post < ApplicationRecord
   belongs_to :user
 
   # commentsテーブルとのアソシエーション
-  has_many :comments  
-  
+  has_many :comments
+
   # いいね機能
   has_many :likes
 
   # ランキング機能
   # has_many :liked_users, through: :likes, source: :user
-
 
   # お気に入り機能
   has_many :favorites, dependent: :destroy
@@ -38,7 +37,7 @@ class Post < ApplicationRecord
   def likes_count
     likes.count
   end
-  
+
   # 検索機能
   def self.search(search)
     if search != ''
