@@ -43,7 +43,6 @@
   <header class="blog-header mt-3">
     <div class="d-flex justify-content-around align-items-center">
       <div class="col-4 pt-1">
-        <a class="link-secondary" href="#"><%#= link_to image_tag("header-post_logo.png", size: '80x70',class:"apple-btn"), new_post_path %></a>
       </div>
       <div class="col-4 text-center">
         <a class="blog-header-logo text-dark" href="#"><%= link_to image_tag("header-main.png", class:"apple-btn"), "#" %></a>
@@ -59,23 +58,6 @@
             <% end %>
           </div>
         </div>
-
-
-
-        <% if user_signed_in? %>
-        
-        <a><%= link_to 'my-PAGE', user_path(current_user), class: "btn btn-sm fw-bold btn-outline-secondary ms-3" %></a>
-        <%# <a class="btn btn-sm btn-outline-secondary" href="#">Log out</a> %>
-        <a><%= link_to 'edit-INFO', edit_user_registration_path, method: :get, class: "btn btn-sm fw-bold btn-outline-secondary ms-3" %> </a>
-        <a><%#= link_to 'Log out', destroy_user_session_path, method: :delete, class: "btn btn-sm fw-bold btn-outline-secondary ms-3" %> </a>
-        
-        <% else %>
-        <div class="fw-bold "><a>Login-Here!!  </a></div>
-        <%# <a class="btn btn-sm btn-outline-secondary" href="#">Log in</a> %>
-        <a><%= link_to 'Log in', new_user_session_path, class: "btn btn-sm fw-bold btn-outline-secondary" %></a>
-        <%# <a class="btn btn-sm btn-outline-secondary" href="#">Sign up</a> %>
-        <a><%= link_to 'Sign up', new_user_registration_path, class: "btn btn-sm fw-bold btn-outline-secondary ms-3" %></a>
-        <% end %>
       </div>
     </div>
   </header>
@@ -88,13 +70,13 @@
           <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
         </a>
         <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownNavLink">
-          <li aria-current="page"><%= link_to 'POST', new_post_path, class: "dropdown-item active" %></li>
-          <li><a class="dropdown-item " href="#" >RANKING</a></li>
-          <li><a class="dropdown-item" href="#">PRIZE-WINNERs</a></li>
-          <li><a class="dropdown-item" href="#">POST-LISTs</a></li>
+          <li aria-current="page"><%= link_to 'POST', new_post_path, class: "dropdown-item active btn-lg" %></li>
+          <li><a class="dropdown-item btn-lg" href="#" >RANKING</a></li>
+          <li><a class="dropdown-item btn-lg" href="#">PRIZE-WINNERs</a></li>
+          <li><a class="dropdown-item btn-lg" href="#">POST-LISTs</a></li>
           <li><hr class="dropdown-divider"></li>
-          <li><a class="dropdown-item" href="#">LIKEs</a></li>
-          <li><a class="dropdown-item" href="#">FOVORITEs</a></li>
+          <li><a class="dropdown-item btn-lg" href="#">LIKEs</a></li>
+          <li><a class="dropdown-item btn-lg" href="#">FOVORITEs</a></li>
         </ul>
       </div>
 
@@ -110,7 +92,9 @@
             </svg>
           </a>
         </div>
-        <div class="fw-bold me-2"><a><%= current_user.nickname %></a></div>
+         <% if user_signed_in? %>
+          <div class="fw-bold me-2"><a><%= current_user.nickname %></a></div>
+        <% end %>
         <div class="flex-shrink-0 dropdown">
           <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
             <% if @user&.image_profile&.attached? && @user.image_profile.variant(resize: "50x50").processed.present? %>
@@ -120,15 +104,15 @@
               <%= image_tag "header-post_logo.png", alt: "デフォルトのプロフィール画像", class: "rounded-circle", width: "50", height: "50" %>
             <% end %>
           </a>
-          <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">
+          <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownNavLink">
             <% if user_signed_in? %>
-              <li><a class="dropdown-item"><%= link_to 'My page', user_path(current_user), class: "btn btn-sm fw-bold  ms-1" %></a></li>
-              <li><a class="dropdown-item" href="#">Profile</a></li>
+              <li><a class="dropdown-item"><%= link_to 'My page', user_path(current_user), class: "btn mb-3 dropdown-item active btn-lg" %></a></li>
+              <li><a ><%= link_to 'Profile', edit_user_registration_path, method: :get, class: "btn  dropdown-item btn-lg" %></a><li>
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Sign out</a></li>
+              <li><a ><%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: "btn dropdown-item btn-lg" %></a></li>
             <% else %>
-              <li><a class="dropdown-item" href="#">Sign up</a></li>
-              <li><a class="dropdown-item" href="#">Log in</a></li>
+              <li><a><%= link_to 'Sign up', new_user_registration_path, class: "btn dropdown-item btn-lg" %></a></li>
+              <li aria-current="page"><a><%= link_to 'Log in', new_user_session_path, class: "btn dropdown-item active btn-lg" %></a></li>
             <% end %>
           </ul>
         </div>
