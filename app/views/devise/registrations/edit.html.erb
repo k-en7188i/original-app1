@@ -1,5 +1,5 @@
 
-<%= form_with model: resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }, id: "new_post",class: 'registration-main', local: true do |f| %>
+<%= form_with model: resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, multipart: true }, id: "new_post",class: 'registration-main', local: true do |f| %>
   
 
   <div class='form-wrap'>
@@ -22,8 +22,7 @@
         <div class="form-text">
           クリックしてファイルをアップロード
         </div>
-       
-        <%= f.file_field :image_profile, id:"post-image" %>
+        <%= f.file_field :image_profile, id: 'post-image' %>
       </div>
     </div>
 

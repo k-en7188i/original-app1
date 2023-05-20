@@ -9,7 +9,8 @@ document.addEventListener('DOMContentLoaded', function(){
   console.log("preview.jsに投稿されました");
   
   // input要素を取得
-  const fileField = document.querySelector('input[type="file"][name="post[image]"]');
+  const fileField = document.querySelector('input[type="file"][id="post-image"]');
+
   // input要素で値の変化が起きた際に呼び出される関数
   fileField.addEventListener('change', function(e){
 
