@@ -101,7 +101,7 @@
               <%= image_tag @user.image_profile.variant(resize: "50x50"), alt: "プロフィール画像", class: "rounded-circle", width: "50", height: "50" %>
             <% else %>
               <!-- 画像が存在しない場合の代替表示 -->
-              <%= image_tag "header-post_logo.png", alt: "デフォルトのプロフィール画像", class: "rounded-circle", width: "50", height: "50" %>
+              <%= image_tag "login.png", alt: "デフォルトのプロフィール画像", class: "rounded-circle", width: "50", height: "50" %>
             <% end %>
           </a>
           <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownNavLink">
