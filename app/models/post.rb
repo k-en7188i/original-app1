@@ -9,8 +9,8 @@ class Post < ApplicationRecord
   # いいね機能
   has_many :likes, dependent: :destroy
 
-  # ランキング機能
-  # has_many :liked_users, through: :likes, source: :user
+  # ランキング機能（いいねの数をカウントしたい時、どの投稿にいいねしたか表示したい時）　
+  has_many :liked_users, through: :likes, source: :user
 
   # お気に入り機能
   has_many :favorites, dependent: :destroy
