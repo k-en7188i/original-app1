@@ -50,8 +50,14 @@ class PostsController < ApplicationController
     @post.update(post_params)
   end
 
+  # 検索機能
   def search
     @posts = Post.search(params[:title])
+  end
+
+  # ランキング機能
+  def ranking
+    @posts = Post.ranking
   end
 
   private
