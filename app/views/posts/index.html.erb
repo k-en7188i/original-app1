@@ -32,15 +32,17 @@
     </style>
 
     
-    <!-- Custom styles for this template -->
-    <link href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap" rel="stylesheet">
-    <!-- Custom styles for this template -->
-    <link href="blog.css" rel="stylesheet">
-  </head>
-  <body>
+  <!-- Custom styles for this template -->
+  <link href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="blog.css" rel="stylesheet">
+</head>
+<body>
     
+
 <div class="container">
   <header class="blog-header mt-3">
+  <%#= render "shared/second-header" %>
     <div class="d-flex justify-content-around align-items-center">
       <div class="col-4 pt-1">
       </div>
@@ -53,8 +55,9 @@
         <div id="search-modal" class="modal">
           <div class="modal-content">
             <%= form_with url: search_posts_path, local: true, method: :get, class: "search-form" do |form| %>
-              <%= form.text_field  :title, placeholder: "投稿を検索する", class: "search-input" %>
-              <%= form.submit "検索", class: "search-btn" %>/
+              <%= form.text_field  :title, placeholder: "投稿を検索する", id: "post_search", class: "search-input" %>
+              <%= form.submit "検索", class: "search-btn" %>
+              <%# <div id="search-result"></div> %> 
             <% end %>
           </div>
         </div>
@@ -72,11 +75,15 @@
         <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownNavLink">
           <li aria-current="page"><%= link_to 'POST', new_post_path, class: "dropdown-item active btn-lg" %></li>
           <li><%= link_to 'RANKING', ranking_posts_path, class: "dropdown-item btn-lg" %></li>
-          <li><a class="dropdown-item btn-lg" href="#">PRIZE-WINNERs</a></li>
-          <li><a class="dropdown-item btn-lg" href="#">POST-LISTs</a></li>
+          <li><a class="dropdown-item btn-lg" href="#">PRIZE-WINNERs(準備中)</a></li>
           <li><hr class="dropdown-divider"></li>
-          <li><a class="dropdown-item btn-lg" href="#">LIKEs</a></li>
-          <li><a class="dropdown-item btn-lg" href="#">FOVORITEs</a></li>
+          <% if user_signed_in? %>
+            <li><%= link_to 'POST-LISTs', user_path(current_user), class: "dropdown-item btn-lg" %></li>
+          <% end %>
+          <%# <li>= link_to 'LIKEs', ranking_posts_path, class: "dropdown-item btn-lg"</li> %>
+          <% if user_signed_in? %>
+            <li><%= link_to 'FOVORITEs', favorites_user_path(current_user), class: "dropdown-item btn-lg" %></li>
+          <% end %>
         </ul>
       </div>
 
@@ -99,8 +106,9 @@
           <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
             <% if @user&.image_profile&.attached? && @user.image_profile.variant(resize: "50x50").processed.present? %>
               <%= image_tag @user.image_profile.variant(resize: "50x50"), alt: "プロフィール画像", class: "rounded-circle", width: "50", height: "50" %>
+            <% elsif !current_user&.image_profile&.attached? %>
+              <%= image_tag "star.png", alt: "デフォルトのサインイン画像", class: "rounded-circle", width: "50", height: "50" %>
             <% else %>
-              <!-- 画像が存在しない場合の代替表示 -->
               <%= image_tag "login.png", alt: "デフォルトのプロフィール画像", class: "rounded-circle", width: "50", height: "50" %>
             <% end %>
           </a>
@@ -185,6 +193,7 @@
             <%= image_tag post.image, class: "item-img" if post.image.attached?%>
           </div>
           <div class="user-nickname"><%= post.user.nickname %></div>
+          <div class="user-nickname"><%= post.category.name %></div>
           
           <div class='item-info'>
             <h3 class='item-name'>
