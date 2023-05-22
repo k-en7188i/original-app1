@@ -106,7 +106,7 @@
           <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
             <% if @user&.image_profile&.attached? && @user.image_profile.variant(resize: "50x50").processed.present? %>
               <%= image_tag @user.image_profile.variant(resize: "50x50"), alt: "プロフィール画像", class: "rounded-circle", width: "50", height: "50" %>
-            <% elsif !current_user&.image_profile&.attached? %>
+            <% elsif current_user&.image_profile&.attached? %>
               <%= image_tag "star.png", alt: "デフォルトのサインイン画像", class: "rounded-circle", width: "50", height: "50" %>
             <% else %>
               <%= image_tag "login.png", alt: "デフォルトのプロフィール画像", class: "rounded-circle", width: "50", height: "50" %>
