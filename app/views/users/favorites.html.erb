@@ -11,6 +11,7 @@
         <li class='list'> %>
           <%= image_tag(favorite.post.image, alt: 'Post Image', size: "250x250") if favorite.post.image.attached? %>
           <%= favorite.post.title %>（<%= link_to '詳細', post_path(favorite.post) %>）
+           <div class="user-nickname"><%= favorite.post.category.name %></div>
         </li>
       <% end %>
       </ul>
