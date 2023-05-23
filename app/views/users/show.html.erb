@@ -21,7 +21,10 @@
         <%#= render locals: { post: post } %> 
       <div class="content_post" style="background-image: url(<%= post.image %>);">
           <%= image_tag post.image, class: "post-img" if post.image.attached? %>
+        <div class="user-nickname"><%= post.title %> (<%= post.category.name %>)</div>
+        
         <div class="content-wrapper">
+        
           <p class="content"><%= post.content %></p>
         </div>
         <div class="more">
@@ -54,14 +57,15 @@
         <span><%= post.created_at.strftime('%Y/%m/%d')%></span>
         <%# <p>お気に入り</p> %>
         <%= link_to image_tag('star.png', width:"30",height:"25"), favorites_user_path %>
-        <span>お気に入りした数</span>
+        <span>お気に入り一覧</span>
         </span>
       </div>
+      
       <% end %>
     <% else %>
       <p>投稿がありません</p>
     <% end %>
-  </div>  
+  </div>
 
     <div class="sell-btn-contents">
       <%=link_to '戻る', root_path, class:"back-btn" %>
