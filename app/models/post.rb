@@ -25,9 +25,9 @@ class Post < ApplicationRecord
   validates :category_id, numericality: { other_than: 1, message: "can't be blank" }
 
   # ランキング機能
-  # def self.ranking
-  #   self.left_joins(:likes).group(:id).order('COUNT(likes.id) DESC')
-  # end
+  def self.ranking
+    left_joins(:likes).group(:id).order('COUNT(likes.id) DESC')
+  end
 
   # いいね機能
   def liked_by?(user)
