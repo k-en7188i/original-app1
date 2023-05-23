@@ -31,6 +31,9 @@ gem 'bootsnap', '>= 1.4.2', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'rspec-rails', '~> 4.0.0'# RSpec
+  gem 'factory_bot_rails'# FactoryBot
+  gem 'faker'# Faker
 end
 
 group :development do
@@ -63,9 +66,15 @@ group :development do
   gem 'rubocop', require: false
 end
 
+# Devise
 gem 'devise'
 
+# Active Storage
 gem 'mini_magick'
 gem 'image_processing', '~> 1.2'
 
+# active_hash
 gem 'active_hash'
+
+# Error Message:Japanese
+gem 'rails-i18n'
