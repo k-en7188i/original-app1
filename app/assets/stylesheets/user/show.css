@@ -39,7 +39,7 @@
     background-size: cover;
     background-position: center center;
     border-radius: 3px;
-    box-shadow: 0 0 10px rgba(41, 41, 41, 0.1);
+    /* box-shadow: 0 0 10px rgba(41, 41, 41, 0.1); */
   }
 
   div.contents.row div.content_post:after {
@@ -178,12 +178,13 @@
 
   .content_post .post-img {
     width: 20%;
-    height: 120%;
+    height: 115%;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     border-radius: 3px;
     z-index: 1;
+    margin-bottom: 20px;
   }
 
   div.contents.row div.content_post .content-wrapper {
