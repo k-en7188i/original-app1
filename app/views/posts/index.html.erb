@@ -90,9 +90,9 @@
           <li><hr class="dropdown-divider"></li>
           <% if user_signed_in? %>
             <li><%= link_to 'POST-LISTs', user_path(current_user), class: "dropdown-item btn-lg" %></li>
-          <% end %>
-          <%# <li>= link_to 'LIKEs', ranking_posts_path, class: "dropdown-item btn-lg"</li> %>
-          <% if user_signed_in? %>
+          
+           <li><%= link_to 'REVIEWs(準備中)', "/", class: "dropdown-item btn-lg" %></li>
+          
             <li><%= link_to 'FOVORITEs', favorites_user_path(current_user), class: "dropdown-item btn-lg" %></li>
           <% end %>
         </ul>
@@ -210,29 +210,57 @@
             <div class="user-nickname"><%= post.user.nickname %> &nbsp; &nbsp; <%= post.category.name %></div>
             
             <div class='item-info'>
-              <h3 class='item-name'>
+              <h3 class='user-nickname'>
                 <%= post.title %>
               </h3>
             </div>
           <% end %>
 
-          
-          <div class='item-price'>
-            <%# 既読 %>
 
-          <!-- 画像表示される -->
-          <%= image_tag "github.png", alt: "既読", size: "30x25" %>
-
+           <!-- 既読機能 -->
+        <div class='item-price'>
+          <div class="article-check">
+            <% if post.present? %>
+              <div class="article-check-button" data-post-id="<%= post.id %>">
+                既読
+              </div>
+            <% else %>
+              <div class="article-check-button" data-post-id="<%= post&.id %>">
+                未読
+              </div>
+            <% end %>
           </div>
+        </div>
+
+        <!-- 既読機能 -->
+        
+        <!--既読機能、以下はボツ-->
+        <%# <div class="article-check"> %>
+          <%# if Check.where(user_id: current_user.id, post_id: post.id).exists? %>
+            <%# <div class="article-check-button" data== post.id> %>
+              <%# 既読 %>
+                <!-- 以下、画像表示される、サイズオーバー -->
+                <%#= image_tag "github.png", alt: "既読", class: "article-check-button", size: "20x15" %>
+            <%# </div> %>
+          <%# end %>
+        <%# </div> %>
+
 
 
           <div class='star-btn'>
-              <%# 下記、星マークは将来的にお気に入り機能になる予定です。 %>
-              <%#= image_tag "header-post_logo.png",  size: "25x25", class:"star-icon" %>
-              <%# ↑フォロー↑ %>
+              <%# 下記、星マークの場所は将来的にフォロー機能になる予定です。 %>
+              <% if user_signed_in? %>
+                
+              <%= render partial: "posts/follow", locals: { post: post } %>
+                
+              <% end %>
+
+              <%#= image_tag "notFollowing.png",  size: "20x20", class:"star-icon" %>
               
+              
+
+              <%# 下記、いいね機能の場所です。 %>
             <% if user_signed_in? %>
-              <%# 下記、星マークは将来ハートマーク(FontAwesome)に変更予定です。 %>
               <div id="like-btn<%= post.id %>">
                 <%= render partial: "likes/like", locals: { post: post } %>
               </div>
@@ -245,20 +273,6 @@
 
           </div>
 
-
-          <%# ランキング機能表示 %>
-
-          <%# <h1>Post Ranking</h1> %>
-          <ol>
-            <%# @ranking_posts.each do |post| %>
-              <%# <li>= link_to post.title, post: =post.likes.count likes</li> %>
-            <%# end %>
-          </ol>
-
-          <%# ランキング機能表示 %>
-
-
-          
             <%# <div class='star-btn'> %>
               <%#= image_tag "star.png", class:"star-icon" %>
               <%# <span class='star-count'>0</span> %>
