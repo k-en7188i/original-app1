@@ -1,7 +1,7 @@
 <% if current_user != post.user %>  
   <% if post.user.followed_by?(current_user) %>
-    <%= link_to image_tag("following.png", size: "20x20"), user_relationships_path(post.user), class: "star-icon", method: :delete %>
+    <%= link_to image_tag("following01.png", size: "45x45"), user_relationships_path(post.user), class: "star-icon", method: :delete %>
   <% else %>
-    <%= link_to image_tag("notFollowing.png", size: "20x20"), user_relationships_path(post.user), class: "star-icon", method: :post %>
+    <%= link_to image_tag("notFollowing01.png", size: "45x45"), user_relationships_path(post.user), class: "star-icon", method: :post %>
   <% end %>
 <% end %>
