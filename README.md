@@ -46,7 +46,7 @@ Basic認証パスワード: 8817
   
  投稿された画像に対して”いいね”や”お気に入り登録”をすることができます。また、自分が好きなユーザーをフォローをする機能を
  実装しました。
- 
+
 [![Image from Gyazo](https://i.gyazo.com/4b5fea91e0103c70eeb3c3e1b7754c85.png)](https://i.gyazo.com/4b5fea91e0103c70eeb3c3e1b7754c85.png)
 
 ## 実装予定の機能
@@ -55,7 +55,7 @@ Basic認証パスワード: 8817
 
 ## データベース設計
 
-[![Image from Gyazo](https://i.gyazo.com/9304ca08b7fbbd088c106cc5441b8808.png)](https://i.gyazo.com/9304ca08b7fbbd088c106cc5441b8808.png)
+[![Image from Gyazo](https://i.gyazo.com/ae8d554ddd5afec22618b144e5d051d2.png)](https://i.gyazo.com/ae8d554ddd5afec22618b144e5d051d2.png)
 
 ## 画面遷移図
 
