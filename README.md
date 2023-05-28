@@ -17,8 +17,8 @@ https://original-app1.onrender.com
   
   
 Basic認証ID：f1111  
-Basic認証パスワード: 8817
-テスト用アカウント:hhhhhh@b-mail.cam
+Basic認証パスワード: 8817  
+テスト用アカウント:hhhhhh@b-mail.cam  
 テスト用パスワード:kkk111
 
   
@@ -43,10 +43,11 @@ Basic認証パスワード: 8817
 [要件を定義したシート](https://docs.google.com/spreadsheets/d/1TujxyIm1oYkKDAx6mhSS8HnFYaHTmuMPfTktw3eRwpE/edit#gid=982722306)
 
 ## 実装した機能についての画像やGIFおよびその説明
-
- 投稿された画像に対して”いいね”や”お気に入り登録”をすることができます。また、自分が好きなユーザーをフォローをする機能を
+  
+ 投稿された画像に対して”いいね”や”お気に入り登録”をすることができます。また、自分が好きなユーザーをフォローをする機能を  
  実装しました。
-
+  
+  
 
 [![Image from Gyazo](https://i.gyazo.com/4b5fea91e0103c70eeb3c3e1b7754c85.png)](https://i.gyazo.com/4b5fea91e0103c70eeb3c3e1b7754c85.png)
 
