@@ -73,7 +73,7 @@ Ruby / Ruby on Rails / MySQL / GitHub・GitHub-Copilot / Render / Visual Studio 
 ## ローカルでの動作方法
   
 以下のコマンドを順に実行。  
-% git clone https://github.com/k-en7188i/original-app1.git
+% git clone https://github.com/k-en7188i/original-app1.git  
 % cd 【ご自身が実行したいディレクトリ名】  
 % bundle install  
 % yarn install  
