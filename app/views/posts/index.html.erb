@@ -181,7 +181,7 @@
             <strong class="d-inline-block mb-3 text-success">提案できる人間になろう！</strong>
             <h3 class="mb-5">Let's Change Yourself!</h3>
             <%# <div class="mb-1 text-muted">Nov 11</div> %>
-            <p class="mb-auto">提案できる人間になることは信頼のあるビジネスマンに慣れる…可能性が高まる</p>
+            <p class="mb-auto">提案できる人間になることは信頼のあるビジネスマンになれる…可能性が高まる</p>
             <%# <a href="#" class="stretched-link">Continue reading</a> %>
           </div>
           <div class="col-auto d-none d-lg-block">
@@ -234,7 +234,7 @@
 
         <!-- 既読機能 -->
         
-        <!--既読機能、以下はボツ-->
+        <!--既読機能、以下はボツ  解決案は部分テンプレートを使ってみる？(いいね機能、フォロー機能のように)-->
         <%# <div class="article-check"> %>
           <%# if Check.where(user_id: current_user.id, post_id: post.id).exists? %>
             <%# <div class="article-check-button" data== post.id> %>
@@ -245,6 +245,8 @@
           <%# end %>
         <%# </div> %>
 
+        <%# 既読機能、部分テンプレートパーツ %>
+         <%#= render partial: "posts/revert_check", locals: { post: post } %>
 
 
           <div class='star-btn'>
