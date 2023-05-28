@@ -266,7 +266,7 @@ h1, h2, h3, h4, h5, h6 {
 .star-icon {
   height: 2vh;
   width: 2vh;
-  margin-right: 2.0vw;
+  margin-right: 2.5vw;
   margin-bottom: 2.0vh;
   color: #727272;
   text-decoration: none;
@@ -311,6 +311,10 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
   font-size: 14px;
   color: #333;
+}
+
+.like-count {
+  margin: 0 20px 0 -25px;
 }
 
 /* レスポンシブ対応*/
