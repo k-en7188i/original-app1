@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
   def show
-    user = User.find(params[:id])
-    @nickname = user.nickname
-    @posts = current_user.posts
+    @user = User.find(params[:id])
+    @nickname = @user.nickname
+    @posts = @user.posts
   end
 
   def favorites

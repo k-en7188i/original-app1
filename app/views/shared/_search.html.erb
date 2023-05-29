@@ -21,15 +21,25 @@
           <% end %>
           <div class='star-btn'>
 
-            <%# 下記、星マークは将来的にお気に入り機能になる予定です。 %>
-            <%= image_tag "star.png", class:"star-icon" %>
-            ↑フォロー↑
-            
+            <%# フォロー機能 %>
+            <% if user_signed_in? %>
+              <%= render partial: "posts/follow", locals: { post: post } %>
+            <% end %>
+
             <%# 下記、星マークは将来ハートマーク(FontAwesome)に変更予定です。 %>
             <div id="like-btn<%= post.id %>">
               <%= render partial: "likes/like", locals: { post: post } %>
             </div>
+            <%# 下記、星マークは将来的にお気に入り機能になる予定です。 %>
+            <% if user_signed_in? %>
+              <%= render partial: "posts/favorite", locals: { post: post } %>
+            <% end %>
+            
+            
+
+
           </div>
+            
           <%# <div class='star-btn'> %>
             <%#= image_tag "star.png", class:"star-icon" %>
             <%# <span class='star-count'>0</span>
