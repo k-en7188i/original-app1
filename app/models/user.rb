@@ -22,12 +22,11 @@ class User < ApplicationRecord
   has_many :posts, through: :checks
 
   # フォロー機能
-  has_many :active_relationships, class_name: "Relationship", foreign_key: :following_id
+  has_many :active_relationships, class_name: 'Relationship', foreign_key: :following_id
   has_many :followings, through: :active_relationships, source: :follower
 
-  has_many :passive_relationships, class_name: "Relationship", foreign_key: :follower_id
+  has_many :passive_relationships, class_name: 'Relationship', foreign_key: :follower_id
   has_many :followers, through: :passive_relationships, source: :following
-
 
   # ActiveStorageの記述/ユーザー登録時の画像投稿準備
   has_one_attached :image_profile
@@ -40,7 +39,7 @@ class User < ApplicationRecord
 
   # フォロー機能
   def followed_by?(user)
-    follower =  passive_relationships.find_by(following_id: user.id)
-    return follower.present?
+    follower = passive_relationships.find_by(following_id: user.id)
+    follower.present?
   end
 end
