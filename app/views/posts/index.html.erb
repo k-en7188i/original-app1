@@ -89,7 +89,7 @@
           <li><a class="dropdown-item btn-lg" href="#">PRIZE-WINNERs(準備中)</a></li>
           <li><hr class="dropdown-divider"></li>
           <% if user_signed_in? %>
-            <li><%= link_to 'POST-LISTs', user_path(current_user), class: "dropdown-item btn-lg" %></li>
+            <li><%= link_to 'POST-LISTs', user_path(current_user.id), class: "dropdown-item btn-lg" %></li>
           
            <li><%= link_to 'REVIEWs(準備中)', "/", class: "dropdown-item btn-lg" %></li>
           
@@ -321,7 +321,7 @@
       </ul>
     </div>
     <%= link_to new_post_path, class: 'purchase-btn' do %>
-      <span class='purchase-btn-text'>Hey,Post HERE !!!</span>
+      <span class='purchase-btn-text'>Post HERE Click !!!</span>
       <%= image_tag 'header-post_logo.png' , size: '85x50' ,class: "purchase-btn-icon" %>
   <% end %>
   <%# </div> %>
@@ -330,7 +330,7 @@
 <footer class="blog-footer">
   <p>
     <a href="#"><%= link_to image_tag("header-post_logo.png", size: '60x50',class:"apple-btn"), "#" %></a>
-  </p><a href="https://twitter.com/mdo">Wan_Coins.Co.Ltd</a>.</p>
+  </p>Established  by  <a href="https://twitter.com/mdo">Wan-Coins.Co.Ltd</a>.</p>
 </footer>
 
 
