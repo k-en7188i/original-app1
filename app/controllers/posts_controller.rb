@@ -8,6 +8,7 @@ class PostsController < ApplicationController
     @posts = Post.all.includes(:user)
 
     @user = current_user # サインインしているユーザーを取得するために、current_userを使用します
+    
 
   end
   
@@ -61,6 +62,7 @@ class PostsController < ApplicationController
   #   render json: posts
   # end
   
+  # 既読機能
   def check_read
     user_id = params[:user_id]
     post_id = params[:post_id]
@@ -69,10 +71,11 @@ class PostsController < ApplicationController
     render json: { read: read }
   end
   
+  
+
   # ランキング機能
   def ranking
-    @posts = Post.ranking
-    # @posts = Post.ranking.limit(8)  # ランキング上位8件を取得
+    @posts = Post.ranking.limit(8)  # ランキング上位8件を取得
   end
   
   private
