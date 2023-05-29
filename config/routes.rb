@@ -20,9 +20,6 @@ Rails.application.routes.draw do
     # get 'check_read/:user_id/:article_id', to: 'articles#check_read', as: 'check_read'
     
   end
-  
-  
-  
   resources :users, only: :show do
     member do
       get :favorites
@@ -32,4 +29,7 @@ Rails.application.routes.draw do
     resource :relationships, only: [:create, :destroy]
   
   end
+  
+  
+  
 end
