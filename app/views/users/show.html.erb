@@ -21,7 +21,7 @@
         <%#= render locals: { post: post } %> 
       <div class="content_post" style="background-image: url(<%= post.image %>);">
           <%= image_tag post.image, class: "post-img" if post.image.attached? %>
-        <div class="user-nickname-mypage"><%= post.title %> (<%= post.category.name %>)</div>
+        <div class="user-nickname"><%= post.title %> (<%= post.category.name %>)</div>
         
         <div class="content-wrapper">
         
