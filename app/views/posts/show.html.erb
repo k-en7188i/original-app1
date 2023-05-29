@@ -55,14 +55,14 @@
   <div class="comment-box">
     <% if user_signed_in? %>
         <%= form_with(model: [@post, @comment], local: true) do |form| %>
-      <%= form.text_area :text, class: "comment-text", placeholder: "コメントする" %>
-      <p class="comment-warn">
-        相手のことを考え丁寧なコメントを心がけましょう。
-        <br>
-        不快な言葉遣いなどは利用制限や退会処分となることがあります。
-      </p>
-      <%= form.submit "コメントする", class: "comment-btn" %>
-    <% end %>
+          <%= form.text_area :text, class: "comment-text", placeholder: "コメントする" %>
+          <p class="comment-warn">
+            相手のことを考え丁寧なコメントを心がけましょう。
+            <br>
+            不快な言葉遣いなどは利用制限や退会処分となることがあります。
+          </p>
+          <%= form.submit "コメントする", class: "comment-btn" %>
+        <% end %>
     <% else %>
       <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
     <% end %>
@@ -77,7 +77,6 @@
           <span class="delete-comment">
             <%= button_to '上のコメントを削除', post_comment_path(comment.post, comment), method: :delete, data: { confirm: '本当に削除しますか？' } %>
           </span>
-
         </p>
       <% end %>
     </div>
