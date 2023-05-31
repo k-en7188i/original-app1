@@ -16,6 +16,10 @@ class Post < ApplicationRecord
   has_many :favorites, dependent: :destroy
   has_many :users, through: :favorites
 
+  # 既読機能
+  has_many :checks, dependent: :destroy
+  has_many :users, through: :checks
+
   # ActiveStorageの記述
   has_one_attached :image
 
