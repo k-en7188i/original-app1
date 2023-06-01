@@ -1,0 +1,5 @@
+.custom-background {
+  background-image: url( "<%= asset_path('LogoMakr-0hvkaw.jpg') %>");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
