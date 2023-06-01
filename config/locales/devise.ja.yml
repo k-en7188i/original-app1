@@ -28,6 +28,11 @@ ja:
         unconfirmed_email: 未確認Eメール
         unlock_token: ロック解除用トークン
         updated_at: 更新日
+      post:
+        title: タイトル
+        content: オススメポイント
+        urllink: リンクURL
+        category_id: カテゴリー
     models:
       user: ユーザー
   devise:
@@ -144,3 +149,4 @@ ja:
       not_saved:
         one: エラーが発生したため %{resource} は保存されませんでした。
         other: "%{count} 件のエラーが発生したため %{resource} は保存されませんでした。"
+        
