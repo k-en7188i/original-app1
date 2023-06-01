@@ -19,7 +19,7 @@ https://original-app1.onrender.com
   
 Basic認証ID：f1111  
 Basic認証パスワード: 8817  
-テスト用アカウント:hhhhhh@b-mail.cam  
+テスト用アカウント:111111@gmoil.com  
 テスト用パスワード:kkk111
 
   
