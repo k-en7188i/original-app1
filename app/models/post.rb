@@ -26,7 +26,7 @@ class Post < ApplicationRecord
   # バリデーションの記述
   validates :title, :content, :urllink, presence: true
   # ジャンルの選択が「---」の時は保存できないようにする
-  validates :category_id, numericality: { other_than: 1, message: "を選択してください" }
+  validates :category_id, numericality: { other_than: 1, message: 'を選択してください' }
 
   # ランキング機能
   def self.ranking
