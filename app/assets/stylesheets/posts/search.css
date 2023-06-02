@@ -11,3 +11,18 @@
   height: 400px;
   object-fit: cover;
 }  */
+
+/* インクリメント検索の実装 */
+
+#search-result{
+  width: 30%;
+}
+
+.child{
+  margin: 5px;
+  border: 1px solid #dedede;
+  background-color: #F4F4F4;
+  padding: 5px;
+  font-size: 12px;
+  text-align: center;
+}
