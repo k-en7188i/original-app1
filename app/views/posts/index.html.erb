@@ -89,7 +89,7 @@
           <li><a class="dropdown-item btn-lg" href="#">PRIZE-WINNERs(準備中)</a></li>
           <li><hr class="dropdown-divider"></li>
           <% if user_signed_in? %>
-            <li><%= link_to 'POST-LISTs', user_path(current_user.id), class: "dropdown-item btn-lg" %></li>
+            <li><%= link_to 'POST-LISTs(改修中)', user_path(current_user.id), class: "dropdown-item btn-lg" %></li>
           
            <li><%= link_to 'REVIEWs(準備中)', "/", class: "dropdown-item btn-lg" %></li>
           
@@ -125,7 +125,7 @@
           </a>
           <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownNavLink">
             <% if user_signed_in? %>
-              <li><a class="dropdown-item"><%= link_to 'My page', user_path(current_user), class: "btn mb-3 dropdown-item active btn-lg" %></a></li>
+              <li><a class="dropdown-item"><%= link_to 'My page(改修中)', user_path(current_user), class: "btn mb-3 dropdown-item active btn-lg" %></a></li>
               <li><a ><%= link_to 'Profile', edit_user_registration_path, method: :get, class: "btn  dropdown-item btn-lg" %></a><li>
               <li><hr class="dropdown-divider"></li>
               <li><a ><%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: "btn dropdown-item btn-lg" %></a></li>
@@ -220,15 +220,7 @@
            <!-- 既読機能 -->
         <div class='item-price'>
           <div class="article-check">
-            <% if post.present? %>
-              <div class="article-check-button" data-post-id="<%= post.id %>">
-                既読
-              </div>
-            <% else %>
-              <div class="article-check-button" data-post-id="<%= post&.id %>">
-                未読
-              </div>
-            <% end %>
+            <%= render "checks/check", post: post %>
           </div>
         </div>
 
