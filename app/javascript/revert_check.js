@@ -5,7 +5,7 @@ window.addEventListener('load', function() {
     console.log("読み込み完了?");
     button.addEventListener("click", () => {
       const postId = button.getAttribute("data-post-id");
-      const deleteFlg = window.confirm('記事の既読を削除しますか？');
+      const deleteFlg = window.confirm('記事の既読の状態を変更しますか？');
       if (deleteFlg) {
         const XHR = new XMLHttpRequest();
         XHR.open("GET", `/checks/revert/${postId}`, true);
