@@ -34,6 +34,13 @@ class PostsController < ApplicationController
 
     @prev_post = Post.where('id < ?', @post.id).order('id DESC').first
     @next_post = Post.where('id > ?', @post.id).order('id ASC').first
+
+    # 既読機能
+    unless @post.checks.exists?(user: current_user)
+      @post.checks.create(user: current_user)
+    end
+  
+
   end
 
   def destroy
