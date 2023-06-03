@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
+  # パスワードの可視化 準備
+  # devise_for :users, controllers: { sessions: 'users/sessions' }
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root to: 'posts#index'
   resources :posts, only: [:index, :new, :create, :destroy, :show, :edit, :update] do
@@ -15,10 +18,13 @@ Rails.application.routes.draw do
     
     
     # 既読機能
-    # get 'checks/:id', to: 'checks#check', as: 'check'
-    # get 'checks/revert/:id', to: 'checks#revert_check'
-    # get 'check_read/:user_id/:article_id', to: 'articles#check_read', as: 'check_read'
+    resources :checks, only: [:create, :destroy]
     
+    # get 'checks/:id', to: 'checks#check', as: 'check'
+    get 'checks/revert/:id', to: 'checks#revert_check'
+    get 'check_read/:user_id/:article_id', to: 'articles#check_read', as: 'check_read'
+
+
   end
   resources :users, only: :show do
     member do
