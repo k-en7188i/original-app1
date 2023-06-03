@@ -1,0 +1,9 @@
+.article-check-button {
+  font-weight: bolder;
+  text-decoration: none;
+  color: #fff;
+  text-shadow:3px 3px 0 #000, -1px -1px 0 #000,
+              -1px 1px 0 #000, 1px -1px 0 #000,
+              0px 1px 0 #000,  0-1px 0 #000,
+              -1px 0 0 #000, 1px 0 0 #F000
+}
