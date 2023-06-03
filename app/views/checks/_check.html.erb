@@ -1,0 +1,7 @@
+<% if user_signed_in? %>
+  <% if current_user.checks.exists?(post_id: post.id) %>
+    <%= link_to '既読', post_check_path(post, post.checks.find_by(user: current_user)), method: :delete, class: 'article-check-button' %>
+  <% else %>
+    <%= link_to '　', post_checks_path(post), method: :post, class: 'article-check-button' %>
+  <% end %>
+<% end %>
