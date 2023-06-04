@@ -26,7 +26,7 @@ class ApplicationController < ActionController::Base
 
   def user_params
     params.require(:user).permit(:nickname, :email, :password, :password_confirmation, :current_password,
-                                 :image_profile).merge(user_id: current_user.id)
+                                  :password_visible, :image_profile).merge(user_id: current_user.id)
   end
 
   def basic_auth
