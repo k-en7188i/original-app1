@@ -19,3 +19,12 @@
   text-align: center;
   color: red;
 }
+
+/* パスワード表示・非表示を切り替える */
+
+#btn_passview {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
