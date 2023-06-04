@@ -1,9 +1,14 @@
 class User < ApplicationRecord
+  # パスワードの可視化 準備
+  # attr_accessor :password_visible
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+
+         
   # ユーザー登録時の性別選択プルダウン
 
   extend ActiveHash::Associations::ActiveRecordExtensions
@@ -30,6 +35,7 @@ class User < ApplicationRecord
 
   # ActiveStorageの記述/ユーザー登録時の画像投稿準備
   has_one_attached :image_profile
+
 
   # バリデーションの記述
   validates :nickname, presence: true
