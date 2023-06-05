@@ -20,11 +20,49 @@
   color: red;
 }
 
-/* パスワード表示・非表示を切り替える */
+/* ログイン時、パスワード表示・非表示を切り替える */
 
 #btn_passview {
+  background-color: #fff;
+  width: 20%;
+  height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
+  text-decoration-line: none;
 }
 
+.password-field-wrapper {
+  display: flex;
+  align-items: center; /* 垂直方向の中央揃え */
+
+}
+
+.password-field-wrapper input {
+  /* margin-right: 5px; パスワードフィールドとボタンの間隔 */
+}
+
+
+/* 新規登録時のパスワード表示・非表示を切り替える*/
+
+#btn_passview_confirmation {
+  background-color: #fff;
+  width: 20%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration-line: none;
+}
+
+/* 会員情報編集画面のパスワード表示・非表示を切り替える */
+
+#btn_passview_current {
+  background-color: #fff;
+  width: 20%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration-line: none;
+}
