@@ -13,6 +13,7 @@
     <%= flash[:notice] %>
     <%= flash[:alert] %>
   </div>
+
   <div class="form-group">
     <div class='form-text-wrap'>
       <label class="form-text">メールアドレス</label>
@@ -20,13 +21,24 @@
     </div>
     <%= f.email_field :email, class:"input-default", id:"email", placeholder:"PC・携帯どちらでも可", autofocus: true %>
   </div>
+
   <div class="form-group">
     <div class='form-text-wrap'>
       <label class="form-text">パスワード</label>
       <span class="indispensable">必須</span>
     </div>
-    <%= f.password_field :password, class:"input-default", id:"password", placeholder:"" %>
+    <div class="password-field-wrapper">
+      <%= f.password_field :password, class:"input-default", id:"password", placeholder:"" %>
+      <!-- 追加: パスワード表示・非表示切り替えボタン -->
+      <%= button_tag id: 'btn_passview', type: 'button', style: 'border: none;' do %>
+        <%= image_tag 'open-eye.png', size: "20x20" ,alt: 'パスワードを表示させる', class:"visible-password", id: 'img-visible' %>
+        <%= image_tag 'close-eye.png', size: "20x20" ,alt: 'パスワードを非表示にする', class:"hidden-password", id: 'img-hidden', style: 'display: none;' %>
+      <% end %>
+    </div>
+
+
   </div>
+
   <div class='login-btn'>
     <%= f.submit "ログイン" ,class:"login-red-btn" %>
   </div>
