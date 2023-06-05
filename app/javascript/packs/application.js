@@ -15,6 +15,7 @@ require("../search")
 // require("../external")
 // require("../tag")＃インクリメントサーチの実装、json形式でデータを返すため、実装中断
 require("../revert_check");
+require("../visible_password");
 
 
 
