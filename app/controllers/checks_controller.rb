@@ -2,8 +2,6 @@ class ChecksController < ApplicationController
   before_action :authenticate_user!
   before_action :set_post, only: [:create, :destroy]
 
-
-
   def create
     @check = current_user.checks.create!(post_id: params[:post_id])
     redirect_to posts_path
@@ -14,7 +12,6 @@ class ChecksController < ApplicationController
     @check.destroy
     redirect_to posts_path
   end
-
 
   # def check
   #   # find_or_create_byとは、「レコードがなければ作り、あればレコード情報を返す」というメソッド
