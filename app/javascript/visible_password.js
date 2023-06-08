@@ -1,17 +1,18 @@
 window.addEventListener('DOMContentLoaded', function(){
   console.log('visible_password.js起動');
-  let btn_passview = document.getElementById('btn_passview');
-  let btn_passview_confirmation = document.getElementById('btn_passview_confirmation');
-  let btn_passview_current = document.getElementById('btn_passview_current');
-  let input_pass = document.getElementById('password');
-  let input_pass_confirmation = document.getElementById('password_confirmation');
-  let input_pass_current = document.getElementById('current-password');
-  let img_visible = document.getElementById('img-visible');
-  let img_hidden = document.getElementById('img-hidden');
-  let img_visible_confirmation = document.getElementById('img-visible-confirmation');
-  let img_hidden_confirmation = document.getElementById('img-hidden-confirmation');
-  let img_visible_current = document.getElementById('img-visible-current');
-  let img_hidden_current = document.getElementById('img-hidden-current');
+  const btn_passview = document.getElementById('btn_passview');
+  const btn_passview_confirmation = document.getElementById('btn_passview_confirmation');
+  const btn_passview_current = document.getElementById('btn_passview_current');
+  const input_pass = document.getElementById('password');
+  const input_pass_confirmation = document.getElementById('password_confirmation');
+  const input_pass_current = document.getElementById('current-password');
+  const img_visible = document.getElementById('img-visible');
+  const img_hidden = document.getElementById('img-hidden');
+  const img_visible_confirmation = document.getElementById('img-visible-confirmation');
+  const img_hidden_confirmation = document.getElementById('img-hidden-confirmation');
+  const img_visible_current = document.getElementById('img-visible-current');
+  const img_hidden_current = document.getElementById('img-hidden-current');
+
 
   btn_passview.addEventListener("click", togglePasswordVisibility.bind(null, input_pass, img_visible, img_hidden));
   btn_passview_confirmation.addEventListener("click", togglePasswordVisibility.bind(null, input_pass_confirmation, img_visible_confirmation, img_hidden_confirmation));
