@@ -16,51 +16,9 @@
     </div> %>
 
 
-    <% if @posts.present? %>
-      <% @posts.each do |post| %>
-          <%#= render locals: { post: post } %> 
-        <div class="content_post" style="background-image: url(<%= post.image %>);">
-            <%= image_tag post.image, class: "post-img" if post.image.attached? %>
-          <div class="user-nickname"><%= post.title %> (<%= post.category.name %>)</div>
-          
-          <div class="content-wrapper">
-          
-            <p class="content"><%= post.content %></p>
-          </div>
-          <div class="more">
-            <span><%= image_tag 'tab1.png', width:"40",height:"40"%></span>
-            <ul class="more_list">
-              <li>
-                <%= link_to '詳細', post_path(post.id), method: :get %>
-              </li>
-              <li>
-                <%#= link_to '★', post_path(post.id), method: :get %>
-              </li>
-              <% if user_signed_in? && current_user.id == post.user_id %>
-                <li>
-                  <%= link_to '編集', edit_post_path(post.id), method: :get %>
-                </li>
-                <li>
-                  <%= link_to '削除', post_path(post.id), method: :delete %>
-                </li>
-                <li>
-                  <%=link_to '戻る', root_path %>
-                </li>
-              <% end %>
-            </ul>
-          </div>
-          <span class="name">
-            <a href="/users/<%= post.user.id %>">
-              <%#= post.user.nickname %>
-            </a>
-              <span>投稿日</span>
-          <span><%= post.created_at.strftime('%Y/%m/%d')%></span>
-          <%# <p>お気に入り</p> %>
-          <%= link_to image_tag('star.png', width:"30",height:"25"), favorites_user_path %>
-          <span>お気に入り一覧</span>
-          </span>
-        </div>
-      
+    <% if @user_posts.exists? %>
+      <% @user_posts.each do |user_post| %>
+        <%= render partial: "post", locals: { post: user_post } %>  
       <% end %>
     <% else %>
       <p>投稿がありません</p>
