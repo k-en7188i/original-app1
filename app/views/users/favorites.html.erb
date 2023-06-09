@@ -1,4 +1,3 @@
-<%# 以下の記述を後日修正する %>
 <%# <div class='item-contents'> %>
   <div class="contents row">
     <p class="nickname"><%= @user.nickname %>のお気に入り一覧</p>
@@ -17,12 +16,11 @@
       </ul>
   </div>
 <%# </div> %>
-<%# 以下の記述を後日修正する %>
 
 
 <div class="sell-btn-contents">
     <%=link_to '戻る', root_path, class:"back-btn" %>
-  </div>
+  
 </div>
 
 <%= render "shared/second-footer" %>
