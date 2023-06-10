@@ -8,6 +8,11 @@ class PostsController < ApplicationController
     @posts = Post.all.includes(:user)
 
     @user = current_user # サインインしているユーザーを取得するために、current_userを使用します
+
+    @post = Post.first
+    
+    #レビュー機能
+    @review = Review.new
   end
 
   def new
@@ -36,11 +41,9 @@ class PostsController < ApplicationController
     @next_post = Post.where('id > ?', @post.id).order('id ASC').first
 
     # 既読機能
-    unless @post.checks.exists?(user: current_user)
-      @post.checks.create(user: current_user)
-    end
-  
+    return if @post.checks.exists?(user: current_user)
 
+    @post.checks.create(user: current_user)
   end
 
   def destroy
