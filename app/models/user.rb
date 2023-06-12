@@ -12,9 +12,10 @@ class User < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :gender
 
-  has_many :posts, dependent: :destroy
+  has_many :posts
   has_many :comments # commentsテーブルとのアソシエーション
   has_many :likes
+  has_many :reviews, dependent: :destroy # reviewsテーブルとのアソシエーション
 
   # お気に入り機能
   has_many :favorites, dependent: :destroy
