@@ -17,6 +17,8 @@ require("../search")
 require("../revert_check");
 require("../visible_password");
 require("../menu")  // ドロップダウンをカーソルを載せるだけで表示させる機能
+require("../review")  // レビューの星マークにカーソルを載せた時の処理
+
 
 
 
