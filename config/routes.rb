@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  
   devise_for :users
   # パスワードの可視化 準備
   # devise_for :users, controllers: { sessions: 'users/sessions' }
@@ -9,6 +10,7 @@ Rails.application.routes.draw do
     resources :favorites, only: [:create, :destroy]
     resources :comments, only: [:create, :destroy]
     resource :likes, only: [:create, :destroy]
+    resources :reviews, only: [:index, :create, :show] #レビュー機能
     collection do
       get 'search'
     end
@@ -26,16 +28,20 @@ Rails.application.routes.draw do
 
 
   end
+  
   resources :users, only: :show do
-    member do
-      get :favorites
-    end
+    #お気に入り機能
+    # resource :favorites, only: [:create, :destroy]
+    # member do
+    #   get :favorites
+    # end
+    get :favorites, on: :member
+
     # フォロー機能
    
     resource :relationships, only: [:create, :destroy]
   
   end
-  
   
   
 end
