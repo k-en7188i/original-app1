@@ -1,0 +1,68 @@
+<section class="section mt-6 ">
+  <div class="container ">
+    <div class="columns is-centered">
+      <div class="column is-5">
+
+      <%# @reviews.each do |review| %>
+        <div class="card mb-6">
+          <header class="card-header">
+            <p class="card-header-title">
+              <%= @post.user.nickname %>さんのレビュー
+            </p>
+          </header>
+          <div class="card-content">
+            <div class="content average-score mt-2 mb-2">
+              <div class="star-rating pt-2 pb-2 mt-2">
+                <% rating = case @post.avg_score
+                   when 4.6..5 then '★★★★★'
+                  when 3.6..4.5 then '★★★★☆'
+                  when 2.6..3.5 then '★★★☆☆'
+                  when 1.6..2.5 then '★★☆☆☆'
+                  when 0.6..1.5 then '★☆☆☆☆'
+                  else '評価なし' end %>
+
+                <div class="star-rating-front" style="width: <%= @post.review_score_percentage %>%"><%= rating %></div>
+                
+              </div>
+              <div class="average-score-display ml-3  pt-2 pb-2">
+                <%= @post.avg_score %>点（<%= @post.reviews.count %>件のレビュー）
+              </div>
+            </div>
+          </div>
+        </div>
+      <%# end %>
+        <%= render 'reviews/form', review: @review, post: @post %>
+        <table class="table is-fullwidth has-text-centered">
+          <thead>
+            <tr>
+              <th>お気に入り</th><th>点数</th><th>内容</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @reviews.each do |review| %>
+              <tr>
+                <td><%= review.user.nickname %></td>
+                <td><%= review.score %></td>
+                <td><%= review.content %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sell-btn-contents mt-6 ">
+  <%=link_to '戻る', root_path, class:"back-btn" %>
+</div>
+
+
+<%# //レビューをする画面作成の課題 %>
+<%# ・どこの画面でレビューをするか（）
+・どのような形でレビューできる仕様にするか
+（ユーザー全体のレビュー一覧と自分のレビュー一覧画面を分ける必要がある）
+
+・お気に入りした投稿のみレビューできるようにする
+・一人一回のレビューに制限する %>
+
