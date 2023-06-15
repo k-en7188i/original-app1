@@ -1,6 +1,6 @@
 .star-rating {
   position: relative;
-  width: 5em;
+  width: 7em;
   height: 1em;
   font-size: 25px;
 }
@@ -8,7 +8,8 @@
   position: absolute;
   top: 0;
   left: 0;
-  overflow: hidden;
+  /* overflow: hidden; */
+  white-space: nowrap;
   color: #ffcc33;
 }
 .star-rating-back {
