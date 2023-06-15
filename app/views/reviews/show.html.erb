@@ -1,0 +1,45 @@
+<section class="section mt-6">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-5">
+        <div class="card mb-6">
+          <header class="card-header">
+            <p class="card-header-title">
+              <%= image_tag @post.image, class: "item-img" if @post.image.attached?%>
+              <%= @post.title %>
+
+            </p>
+          </header>
+          <div class="card-content">
+            <div class="content average-score">
+
+              <div class="star-rating mt-2 mb-4">
+                <div class="star-rating pt-4 pb-4">
+                  <% rating = case @post.avg_score
+                  when 4.6..5 then '★★★★★'
+                  when 3.6..4.5 then '★★★★☆'
+                  when 2.6..3.5 then '★★★☆☆'
+                  when 1.6..2.5 then '★★☆☆☆'
+                  when 0.6..1.5 then '★☆☆☆☆'
+                  else '評価なし' end %>
+
+                  <div class="star-rating-front mt-2 mb-4" style="width: <%= @post.review_score_percentage %>%"><%= rating %></div>
+                  
+                </div>
+              </div>
+
+              <div class="average-score-display ml-3 pt-2 pb-2 m-2">
+                <%= @post.avg_score %>点（<%= @post.reviews.count %>件のレビュー）
+              </div>
+            </div>
+          </div>
+        </div>
+        <%= render 'reviews/form', review: @review, post: @post %>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sell-btn-contents mt-4">
+  <%=link_to '戻る', root_path, class:"back-btn" %>
+</div>
