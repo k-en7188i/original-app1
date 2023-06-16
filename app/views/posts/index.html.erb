@@ -68,7 +68,7 @@
             <%= form_with url: search_posts_path, local: true, method: :get, class: "search-form" do |form| %>
               <%= form.text_field  :title, placeholder: "投稿を検索する", id: "post_search", class: "search-input" %>
               <%= form.submit "検索", class: "search-btn" %>
-              <%# <div id="search-result"></div> %> 
+              <div id="search-result"></div> 
             <% end %>
           </div>
         </div>
@@ -91,7 +91,7 @@
           <% if user_signed_in? %>
             <li><%= link_to 'My-Posts(改修中)', user_path(current_user), class: "dropdown-item btn-lg" %></li>
           
-           <li><%= link_to 'REVIEWs(準備中)', "/", class: "dropdown-item btn-lg" %></li>
+           <li><%= link_to 'REVIEWs(改修中)', post_reviews_path(post_id: @post.id), class: "dropdown-item btn-lg" %></li>
           
             <li><%= link_to 'FOVORITEs', favorites_user_path(current_user), class: "dropdown-item btn-lg" %></li>
           <% end %>
@@ -266,6 +266,30 @@
             <% end %>
 
           </div>
+          <%# @posts.each do |post| %>
+              <div class="star-rating mt-2">
+                <div class="star-rating mt-2 mb-2">
+                  <% rating = case post.avg_score
+                              when 4.6..5 then '★★★★★'
+                              when 3.6..4.5 then '★★★★☆'
+                              when 2.6..3.5 then '★★★☆☆'
+                              when 1.6..2.5 then '★★☆☆☆'
+                              when 0.6..1.5 then '★☆☆☆☆'
+                              else '評価なし'
+                            end %>
+
+                  <div class="star-rating-front" style="width: <%= post.review_score_percentage %>"><%= rating %></div>
+                  <div class="star-rating-back"><%= rating.sub('★', '☆') %></div>
+                </div>
+              </div>
+              
+              <div class="average-score-display ml-3 pt-2">
+                <%= post.avg_score %>点（<%= post.reviews.count %>件のレビュー）
+              </div>
+              <%= link_to post_reviews_path(post), class: "button light ml-3 mt-3" do %>
+                <%= image_tag "review.png", size: "40x40", alt: "レビュー画面へ進む" %>
+              <% end %>
+          <%# end %>
 
             <%# <div class='star-btn'> %>
               <%#= image_tag "star.png", class:"star-icon" %>
