@@ -12,9 +12,9 @@ class ReviewsController < ApplicationController
     @review.user_id = current_user.id
 
     if @review.save
-      redirect_to post_reviews_path(@post), notice: "Review created successfully."
+      redirect_to post_reviews_path(@post), notice: 'Review created successfully.'
     else
-      render "posts/show"
+      render 'posts/show'
     end
   end
 
