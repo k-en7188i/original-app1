@@ -286,8 +286,10 @@
               <div class="average-score-display ml-3 pt-2">
                 <%= post.avg_score %>点（<%= post.reviews.count %>件のレビュー）
               </div>
-              <%= link_to post_reviews_path(post), class: "button light ml-3 mt-3" do %>
-                <%= image_tag "review.png", size: "40x40", alt: "レビュー画面へ進む" %>
+              <% if user_signed_in? %>
+                <%= link_to post_reviews_path(post), class: "button light ml-3 mt-3" do %>
+                  <%= image_tag "review.png", size: "40x40", alt: "レビュー画面へ進む" %>
+                <% end %>
               <% end %>
           <%# end %>
 
