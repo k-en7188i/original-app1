@@ -3,7 +3,6 @@ class UsersController < ApplicationController
     user = User.find(params[:id])
     @nickname = user.nickname
     @user_posts = user.posts.includes(:user)
-
   end
 
   def favorites
