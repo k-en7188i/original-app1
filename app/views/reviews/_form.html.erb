@@ -1,4 +1,6 @@
-<p class="is-size-4 mt-5 mb-3  d-flex justify-content-center">レビューを書く</p>
+<% if current_page?(post_review_path(id: @post.id)) %>
+ <p class="is-size-4 mt-6 mb-3  d-flex justify-content-center">レビューを書く</p>
+<% end %>
 <% if review.errors.any? %>
   <div class="notification is-danger">
     <h2><%= review.errors.count %>件のエラーがあります。</h2>
@@ -11,32 +13,34 @@
 <% end %>
 
 <div class="rating-box mt-3 d-flex justify-content-center">
-  <%= form_with model: review, url: post_reviews_path(post), local: true do |f| %>
-    <div class="main-rating">
-      <div class="ratings mb-3">
-        <!-- 各星に一意のIDを付けます -->
-        <span class="fa-solid fa-star" id="star1"></span>
-        <span class="fa-solid fa-star" id="star2"></span>
-        <span class="fa-solid fa-star" id="star3"></span>
-        <span class="fa-solid fa-star" id="star4"></span>
-        <span class="fa-solid fa-star" id="star5"></span>
+  <% if current_page?(post_review_path(id: @post.id)) %>
+    <%= form_with model: review, url: post_reviews_path(post), local: true do |f| %>
+      <div class="main-rating">
+        <div class="ratings mb-3">
+          <!-- 各星に一意のIDを付けます -->
+          <span class="fa-solid fa-star" id="star1"></span>
+          <span class="fa-solid fa-star" id="star2"></span>
+          <span class="fa-solid fa-star" id="star3"></span>
+          <span class="fa-solid fa-star" id="star4"></span>
+          <span class="fa-solid fa-star" id="star5"></span>
 
+        </div>
+        <div class="ml-3 rating-value-display"><span id="rating-value-display">0</span>/5</div>
       </div>
-      <div class="ml-3 rating-value-display"><span id="rating-value-display">0</span>/5</div>
-    </div>
-    <%= f.hidden_field :post_id, value: post.id %>
-    <%= f.hidden_field :score, id: "rating-value" %>
-    <%= f.text_field :content, class: "textarea" %>
-    <%= f.submit "保存", class: "button mb-4" %>
+      <%= f.hidden_field :post_id, value: post.id %>
+      <%= f.hidden_field :score, id: "rating-value" %>
+      <%= f.text_field :content, class: "textarea" %>
+      <%= f.submit "保存", class: "button mb-4" %>
 
 
+    <% end %>
   <% end %>
 </div>
 
 <% if current_page?(post_review_path(id: @post.id)) %>
-  <%= link_to "他のレビューを見る", post_reviews_path(@post), class: "button light mb-3 d-flex justify-content-center" %>
+  <%= link_to "このレビューの一覧を見る", post_reviews_path(@post), class: "button light mb-3 d-flex justify-content-center" %>
 <% else %>
-  <%= link_to "レビュー画面へ進む", post_review_path(id: @post.id), class: "button light mb-3 d-flex justify-content-center" %>
+  <%= link_to "この投稿にレビューする", post_review_path(id: @post.id), class: "button light mb-3 d-flex justify-content-center" %>
 <% end %>
 
 <%#= javascript_include_tag 'review.js' %>
