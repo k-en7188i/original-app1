@@ -5,13 +5,13 @@ class PostsController < ApplicationController
   def index
     # @posts = Post.all
     # @user = @post.user
-    @posts = Post.all.includes(:user)
+    @posts = Post.includes(:user, :reviews).all
 
     @user = current_user # サインインしているユーザーを取得するために、current_userを使用します
 
     @post = Post.first
-    
-    #レビュー機能
+
+    # レビュー機能
     @review = Review.new
   end
 
@@ -63,12 +63,16 @@ class PostsController < ApplicationController
   end
 
   # インクリメントサーチ機能
-  # json形式で検索結果データを返すので完全が必要
-  # def search
-  #   return nil if params[:title] == ""
-  #   posts = Post.where(['title LIKE ?', "%#{params[:title]}%"])
-  #   render json: posts
-  # end
+  # json形式で検索結果データを返すので改善が必要
+  def search
+    return if params[:title].blank?
+  
+    @posts = Post.where('title LIKE ?', "%#{params[:title]}%")
+    respond_to do |format|
+      format.html { render partial: 'search_results', layout: false }
+      format.json { render json: @posts }
+    end
+  end
 
   # 既読機能
   def check_read
