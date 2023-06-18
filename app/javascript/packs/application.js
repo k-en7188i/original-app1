@@ -13,7 +13,7 @@ import "../stylesheets/application"
 require("../preview")
 require("../search")
 // require("../external")
-// require("../tag")＃インクリメントサーチの実装、json形式でデータを返すため、実装中断
+require("../tag") //インクリメントサーチの実装、json形式でデータを返すため、実装中断
 require("../revert_check");
 require("../visible_password");
 require("../menu")  // ドロップダウンをカーソルを載せるだけで表示させる機能
