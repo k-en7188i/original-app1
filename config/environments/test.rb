@@ -45,4 +45,10 @@ Rails.application.configure do
 
   # Raises error for missing translations.
   # config.action_view.raise_on_missing_translations = true
+
+   # Disable Basic authentication in test environment. 
+  #  # Basic認証を有効にする設定
+  config.middleware.insert_before(Rack::Sendfile, Rack::Auth::Basic) do |u, p|
+    [u, p] == [ENV['BASIC_AUTH_USERNAME'], ENV['BASIC_AUTH_PASSWORD']]
+  end
 end
