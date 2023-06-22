@@ -15,3 +15,6 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 
 # トップ画面背景画像
 # Rails.application.config.assets.precompile += %w( custom.css )
+
+#レビュー機能
+Rails.application.config.assets.precompile += %w( review.js )
