@@ -184,6 +184,9 @@
 .register-btn {
   width: 50%;
   margin: 0 auto;
+  text-align: center;
+  margin-top: 15px;
+  
 }
 
 .register-red-btn {
@@ -195,6 +198,7 @@
   font-size: 14px;
   font-weight: bolder;
   cursor: pointer;
+  text-decoration-line: none;
 }
 
 .register-info {
