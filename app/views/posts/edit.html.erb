@@ -9,7 +9,7 @@
 
     <%= render 'shared/error_messages', model: f.object %>
 
-    <%# 商品画像 %>
+    <%# 投稿画像 %>
     <div class="img-upload">
       <div class="weight-bold-text">
         イチオシ画像
@@ -26,8 +26,8 @@
         <%= f.file_field :image, id:"post-image" %>
       </div>
     </div>
-    <%# /商品画像 %>
-    <%# 商品名と商品説明 %>
+    <%# 投稿画像 %>
+    <%# タイトルと投稿説明 %>
     <div class="new-items">
       <div class="weight-bold-text">
         タイトル
@@ -42,9 +42,10 @@
         <%= f.text_area :content, class:"items-text", id:"item-info", placeholder:"投稿内容の説明:必須 200文字まで。" ,rows:"7" ,maxlength:"200" %>
       </div>
     </div>
-    <%# /商品名と商品説明 %>
+    <%# タイトルと投稿説明 %>
 
-    <%# 商品の詳細 %>
+
+    <%# 投稿内容の詳細 %>
     <div class="items-detail">
       <div class="weight-bold-text"></div>
       <div class="form">
@@ -52,75 +53,14 @@
           リンクURL
           <span class="indispensable">必須</span>
         </div>
-        <%#= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"post-category"}) %>
         <%= f.text_area :urllink, class:"items-text", id:"item-sales-status" %>
         <div class="weight-bold-text">
           カテゴリー
           <span class="indispensable">必須</span>
         </div>
         <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"items-text", id:"item-category"}) %>
-        <%#= f.text_area :category_id, class:"items-text", id:"item-category" %>
       </div>
     </div>
-    <%# /商品の詳細 %>
-
-    <%# 配送について %>
-    <%# <div class="posts-detail">
-      <div class="weight-bold-text question-text">
-        <span>配送について</span>
-        <a class="question" href="#">?</a>
-      </div>
-      <div class="form">
-        <div class="weight-bold-text">
-          配送料の負担
-          <span class="indispensable">必須</span>
-        </div> %>
-        <%#= f.collection_select(:shipping_fee_id, ShippingFee.all, :id, :name, {}, {class:"select-box", id:"post-shipping-fee-status"}) %>
-        <%# <div class="weight-bold-text">
-          発送元の地域
-          <span class="indispensable">必須</span>
-        </div> %>
-        <%#= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"post-prefecture"}) %>
-        <%# <div class="weight-bold-text">
-          発送までの日数
-          <span class="indispensable">必須</span>
-        </div> %>
-        <%#= f.collection_select(:shipping_day_id, ShippingDay.all, :id, :name, {}, {class:"select-box", id:"post-scheduled-delivery"}) %>
-      <%# </div> %>
-    <%# </div> %>
-    <%# /配送について %>
-
-    <%# 販売価格 %>
-    <%# <div class="sell-price">
-      <div class="weight-bold-text question-text">
-        <span>販売価格<br>(¥300〜9,999,999)</span>
-        <a class="question" href="#">?</a>
-      </div>
-      <div>
-        <div class="price-content">
-          <div class="price-text">
-            <span>価格</span>
-            <span class="indispensable">必須</span>
-          </div>
-          <span class="sell-yen">¥</span> %>
-          <%#= f.text_field :price, class:"price-input", id:"post-price", placeholder:"例）300" %>
-        <%# </div>
-        <div class="price-content">
-          <span>販売手数料 (10%)</span>
-          <span>
-            <span id='add-tax-price'></span>円
-          </span>
-        </div>
-        <div class="price-content">
-          <span>販売利益</span>
-          <span>
-            <span id='profit'></span>円
-          </span>
-        </div>
-      </div>
-    </div> %>
-    <%# /販売価格 %>
-
     <%# 注意書き %>
     <div class="caution">
       <p class="sentence">
