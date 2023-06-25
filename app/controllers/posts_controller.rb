@@ -66,7 +66,7 @@ class PostsController < ApplicationController
   # json形式で検索結果データを返すので改善が必要
   def search
     return if params[:title].blank?
-  
+
     @posts = Post.where('title LIKE ?', "%#{params[:title]}%")
     respond_to do |format|
       format.html { render partial: 'search_results', layout: false }
