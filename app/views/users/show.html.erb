@@ -1,10 +1,7 @@
 
 <%# //マイページの表示 %>
-
-
   <div class="contents row">
     <p class="nickname"><%= @nickname %>さんの投稿一覧</p>
-
 
     <%# お気に入り一覧 %>
     <%# <div class="more">
@@ -15,7 +12,6 @@
       </ul>
     </div> %>
 
-
     <% if @user_posts.exists? %>
       <% @user_posts.each do |user_post| %>
         <%= render partial: "post", locals: { post: user_post } %>  
@@ -25,8 +21,8 @@
     <% end %>
   </div>
 
-    <div class="sell-btn-contents">
-      <%=link_to '戻る', root_path, class:"back-btn" %>
-    </div>
+  <div class="sell-btn-contents">
+    <%=link_to '戻る', root_path, class:"back-btn" %>
+  </div>
 
 <%= render "shared/second-footer" %>
