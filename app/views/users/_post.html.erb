@@ -12,9 +12,6 @@
       <li>
         <%= link_to '詳細', post_path(post.id), method: :get %>
       </li>
-      <li>
-        <%#= link_to '★', post_path(post.id), method: :get %>
-      </li>
       <% if user_signed_in? && current_user.id == post.user_id %>
         <li>
           <%= link_to '編集', edit_post_path(post.id), method: :get %>
@@ -30,12 +27,8 @@
   </div>
   <span class="name">
     <a href="/users/<%= post.user.id %>">
-      <%#= post.user.nickname %>
     </a>
       <span>投稿日</span>
   <span><%= post.created_at.strftime('%Y/%m/%d')%></span>
-  <%# <p>お気に入り</p> %>
-  <%#= link_to image_tag('star.png', width:"30",height:"25"), favorites_user_path %>
-  <%# <span>お気に入り一覧</span> %>
   </span>
 </div>
