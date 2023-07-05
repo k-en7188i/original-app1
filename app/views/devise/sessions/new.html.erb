@@ -1,7 +1,7 @@
 <%= render "shared/second-header"%>
 
 <%# モデル名がない？  url: user_session_path,%>
-<%= form_with model: @user, url: user_session_path, class: 'registration-main', local: true, inputs: :autofocus do |f| %>
+<%= form_with model: @user, url: user_session_path, class: 'registration-main', local: true do |f| %>
 
 <div class='form-wrap'>
   <div class='form-header'>
@@ -42,6 +42,11 @@
   <div class='login-btn'>
     <%= f.submit "ログイン" ,class:"login-red-btn" %>
   </div>
+  
+  <div class='register-btn'>
+      <%= link_to "会員登録画面はこちら", new_user_registration_path, class:"register-red-btn" %>
+  </div>
+
 </div>
 <% end %>
 
