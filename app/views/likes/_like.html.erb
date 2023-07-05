@@ -1,13 +1,6 @@
-<%# unless current_user == @user %>
-  <% if user_signed_in? && post.liked_by?(current_user)%>
-
-  <%# 下記、星マークはサムアップマーク(FontAwesome)に変更予定です。 %>
-    <%= link_to image_tag("LogoMakr-6RtPkf.png", size: "25x25"), post_likes_path(post.id), method: :delete, class: "star-icon", remote: true %>
-
-  <% else %>
-    <%= link_to image_tag("LogoMakr-8PqIc4.png", size: "25x25"), post_likes_path(post.id), method: :post, class: "star-icon", remote: true %>
-  <% end %>
-  <span class="like-count"><%= post.likes_count %></span>
-<%# end %>
-<%# 使用したい画像をassets/imagesフォルダに保存します。例えば、imagesフォルダにstar.pngという名前の画像を保存した場合 %>
-<%#= link_to image_tag("ここに画像"), post_likes_path(post.id), method: :delete, class: "star-icon", remote: true %>
+<% if user_signed_in? && post.liked_by?(current_user)%>
+  <%= link_to image_tag("LogoMakr-6RtPkf.png", size: "25x25"), post_likes_path(post.id), method: :delete, class: "star-icon", remote: true %>
+<% else %>
+  <%= link_to image_tag("LogoMakr-8PqIc4.png", size: "25x25"), post_likes_path(post.id), method: :post, class: "star-icon", remote: true %>
+<% end %>
+<span class="like-count"><%= post.likes_count %></span>
