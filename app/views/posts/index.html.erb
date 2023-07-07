@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="ja">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -53,7 +53,6 @@
 
 <div class="container">
   <header class="blog-header mt-3">
-  <%#= render "shared/second-header" %>
     <div class="d-flex justify-content-around align-items-center">
       <div class="col-4 pt-1">
       </div>
@@ -75,7 +74,6 @@
       </div>
     </div>
   </header>
-  <%# 新ヘッダー候補 %>
 
   <header class="py-3 mb-3 border-bottom">
     <div class="container-fluid d-grid gap-3 align-items-center" style="grid-template-columns: 1fr 2fr;">
@@ -91,7 +89,7 @@
           <% if user_signed_in? %>
             <li><%= link_to 'My-Posts(改修中)', user_path(current_user), class: "dropdown-item btn-lg" %></li>
           
-           <li><%= link_to 'REVIEWs(改修中)', post_reviews_path(post_id: @post.id), class: "dropdown-item btn-lg" %></li>
+           <li><%= link_to 'REVIEWs', post_reviews_path(post_id: @post.id), class: "dropdown-item btn-lg" %></li>
           
             <li><%= link_to 'FOVORITEs', favorites_user_path(current_user), class: "dropdown-item btn-lg" %></li>
           <% end %>
@@ -139,134 +137,95 @@
     </div>
   </header>
 
-  <%# 新ヘッダー候補 %>
-
-
-<main class="container ">
-  <%# <div class="custom-background "> %>
-    <div class="p-4 p-md-5 mb-4 text-black rounded custom-gray ">
-      <div class="col-md-6 px-0">
-        <div class="d-flex align-items-center justify-content-between">
-
-          <h1 class=" fst-italic">Let's Recommend!!!<br>おすすめ記事を投稿しよう！！</h1>
-          <%# <p class="lead my-3 fst-italic">Ce site est illégal ! Vous pouvez être un utilisateur, mais vous ne pourrez pas vous arrêter.</p> %>
-        </div>
-        <%# <img src="app/assets/images/star.png" alt="Image 1" class="img-fluid"> %>
-        <%# </div> %>
-        <%# <div class="d-flex align-items-center">
-          <img src="path/to/your/image2.jpg" alt="Image 2" class="mr-3">
-        </div> %>
-      </div>
-    </div>
-
-    <div class="row mb-6 ">
-      <div class="col-md-6">
-        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-          <div class="col p-4 d-flex flex-column position-static">
-            <strong class="d-inline-block mb-3 text-primary">何かをおすすめすることを習慣化</strong>
-            <h3 class="mb-5">Photo & Article-Title</h3>
-            <%# <div class="mb-1 text-muted">Nov 12</div> %>
-          <p class="card-text mb-auto">おすすめ記事を投稿する習慣をつけてビジネススキルに高めよう</p>
-            <%# <a href="#" class="stretched-link">Continue reading</a> %>
-          </div>
-          <div class="col-auto d-none d-lg-block">
-          <%# <img src="app/assets/images/star.png" alt="Image 1" class="img-fluid"> %>
-          <%# <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> %>
+  <main class="container ">
+      <div class="p-4 p-md-5 mb-4 text-black rounded custom-gray ">
+        <div class="col-md-6 px-0">
+          <div class="d-flex align-items-center justify-content-between">
+            <h1 class=" fst-italic">Let's Recommend!!!<br>おすすめ記事を投稿しよう！！</h1>
           </div>
         </div>
       </div>
-      <div class="col-md-6">
-        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-          <div class="col p-4 d-flex flex-column position-static">
-            <strong class="d-inline-block mb-3 text-success">提案できる人間になろう！</strong>
-            <h3 class="mb-5">Let's Change Yourself!</h3>
-            <%# <div class="mb-1 text-muted">Nov 11</div> %>
-            <p class="mb-auto">提案できる人間になることは信頼のあるビジネスマンになれる…可能性が高まる</p>
-            <%# <a href="#" class="stretched-link">Continue reading</a> %>
-          </div>
-          <div class="col-auto d-none d-lg-block">
-            <%# <img src="/Users/ishikuraken/projects/original-app1/app/assets/images/LogoMakr-0hvkaw.jpg" alt="Thumbnail" class="bd-placeholder-img" width="200" height="250"> %>
-            <%# <svg class="bd-placeholder-img" width="200" height="250" xmlns="app/assets/images/star.png" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> %>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <div class='item-contents'>
-      <h2 class='title'>ピックアップカテゴリー</h2>
-      <div class="subtitle" >
-        <h4>新規投稿一覧</h4>
-      </div>
-      <ul class='item-lists'>
-
-      <% @posts.each do |post| %>
-        <li class='list'>
-          <%= link_to post_path(post.id) do %>
-            <div class='item-img-content'>
-              <%= image_tag post.image, class: "item-img" if post.image.attached?%>
-
-              
+      <div class="row mb-6 ">
+        <div class="col-md-6">
+          <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            <div class="col p-4 d-flex flex-column position-static">
+              <strong class="d-inline-block mb-3 text-primary">何かをおすすめすることを習慣化</strong>
+              <h3 class="mb-5">Photo & Article-Title</h3>
+            <p class="card-text mb-auto">おすすめ記事を投稿する習慣をつけてビジネススキルに高めよう</p>
             </div>
-            <div class="user-nickname"><%= post.user.nickname %> &nbsp; &nbsp; <%= post.category.name %></div>
-            
-            <div class='item-info'>
-              <h3 class='user-nickname'>
-                <%= post.title %>
-              </h3>
+            <div class="col-auto d-none d-lg-block">
             </div>
-          <% end %>
-
-
-           <!-- 既読機能 -->
-        <div class='item-price'>
-          <div class="article-check">
-            <%= render "checks/check", post: post %>
           </div>
         </div>
+        <div class="col-md-6">
+          <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            <div class="col p-4 d-flex flex-column position-static">
+              <strong class="d-inline-block mb-3 text-success">提案できる人間になろう！</strong>
+              <h3 class="mb-5">Let's Change Yourself!</h3>
+              <p class="mb-auto">提案できる人間になることは信頼のあるビジネスマンになれる…可能性が高まる</p>
+            </div>
+            <div class="col-auto d-none d-lg-block">
+            </div>
+          </div>
+        </div>
+      </div>
 
-        <!-- 既読機能 -->
-        
-        <!--既読機能、以下はボツ  解決案は部分テンプレートを使ってみる？(いいね機能、フォロー機能のように)-->
-        <%# <div class="article-check"> %>
-          <%# if Check.where(user_id: current_user.id, post_id: post.id).exists? %>
-            <%# <div class="article-check-button" data== post.id> %>
-              <%# 既読 %>
-                <!-- 以下、画像表示される、サイズオーバー -->
-                <%#= image_tag "github.png", alt: "既読", class: "article-check-button", size: "20x15" %>
-            <%# </div> %>
-          <%# end %>
-        <%# </div> %>
+      <div class='item-contents'>
+        <h2 class='title'>ピックアップカテゴリー</h2>
+        <div class="subtitle" >
+          <h4>新規投稿一覧</h4>
+        </div>
+        <ul class='item-lists'>
 
-        <%# 既読機能、部分テンプレートパーツ %>
-         <%#= render partial: "posts/revert_check", locals: { post: post } %>
-
-
-          <div class='star-btn'>
-              <%# 下記、星マークの場所は将来的にフォロー機能になる予定です。 %>
-              <% if user_signed_in? %>
-                
-              <%= render partial: "posts/follow", locals: { post: post } %>
-                
-              <% end %>
-
-              <%#= image_tag "notFollowing.png",  size: "20x20", class:"star-icon" %>
-              
-              
-
-              <%# 下記、いいね機能の場所です。 %>
-            <% if user_signed_in? %>
-              <div id="like-btn<%= post.id %>">
-                <%= render partial: "likes/like", locals: { post: post } %>
+        <% @posts.each do |post| %>
+          <li class='list'>
+            <%= link_to post_path(post.id) do %>
+              <div class='item-img-content'>
+                <%= image_tag post.image, class: "item-img" if post.image.attached?%>
+              </div>
+              <div class="user-nickname"><%= post.user.nickname %> &nbsp; &nbsp; <%= post.category.name %></div>
+              <div class='item-info'>
+                <h3 class='user-nickname'>
+                  <%= post.title %>
+                </h3>
               </div>
             <% end %>
 
-            <% if user_signed_in? %>
-            
-              <%= render partial: "posts/favorite", locals: { post: post } %>
-            <% end %>
 
-          </div>
-          <%# @posts.each do |post| %>
+            <!-- 既読機能 -->
+              <div class='item-price'>
+                <div class="article-check">
+                  <%= render "checks/check", post: post %>
+                </div>
+              </div>
+
+              <!-- 既読機能 -->
+              <div class='star-btn'>
+                  <%# 下記、星マークの場所は将来的にフォロー機能になる予定です。 %>
+                  <% if user_signed_in? %>
+                    
+                  <%= render partial: "posts/follow", locals: { post: post } %>
+                    
+                  <% end %>
+
+                  <%#= image_tag "notFollowing.png",  size: "20x20", class:"star-icon" %>
+                  
+                  
+
+                  <%# 下記、いいね機能の場所です。 %>
+                <% if user_signed_in? %>
+                  <div id="like-btn<%= post.id %>">
+                    <%= render partial: "likes/like", locals: { post: post } %>
+                  </div>
+                <% end %>
+
+                <% if user_signed_in? %>
+                
+                  <%= render partial: "posts/favorite", locals: { post: post } %>
+                <% end %>
+
+              </div>
               <div class="star-rating mt-2">
                 <div class="star-rating mt-2 mb-2">
                   <% rating = case post.avg_score
@@ -282,7 +241,7 @@
                   <div class="star-rating-back"><%= rating.sub('★', '☆') %></div>
                 </div>
               </div>
-              
+                    
               <div class="average-score-display ml-3 pt-2">
                 <%= post.avg_score %>点（<%= post.reviews.count %>件のレビュー）
               </div>
@@ -291,67 +250,58 @@
                   <%= image_tag "review.png", size: "40x40", alt: "レビュー画面へ進む" %>
                 <% end %>
               <% end %>
-          <%# end %>
-
-            <%# <div class='star-btn'> %>
-              <%#= image_tag "star.png", class:"star-icon" %>
-              <%# <span class='star-count'>0</span> %>
-            <%# </div> %>
           </li>
-      <% end %>
-    
-    </div>
-    <div class="p-4">
-      <h4 class="fst-italic text-center ">Elsewhere</h4>
-      <ol class="list-unstyled mt-4 d-flex justify-content-around align-items-center">
-        <li class="me-1">
-          <a href="https://github.com/"><%= image_tag "github.png", alt: "GitHub", class: "rounded-circle", width: "50", height: "50" %></a>
-        </li>
-        <li class="me-1">
-          <a href="https://www.instagram.com/"><%= image_tag "instagram.png", alt: "Twitter", class: "rounded-circle", width: "50", height: "50" %></a>
-        </li>
-        <li class="me-1">
-          <a href="https://twitter.com/home"><%= image_tag "twitter.png", alt: "Instagram", class: "rounded-circle", width: "50", height: "50" %></a>
-        </li>
-        <li class="me-1">
-          <a href="https://www.facebook.com/campaign/landing.php?campaign_id=1665596389&extra_1=s%7Cc%7C321610682046%7Ce%7Cfacebook%7C&placement=&creative=321610682046&keyword=facebook&partner_id=googlesem&extra_2=campaignid%3D1665596389%26adgroupid%3D65075436220%26matchtype%3De%26network%3Dg%26source%3Dnotmobile%26search_or_content%3Ds%26device%3Dc%26devicemodel%3D%26adposition%3D%26target%3D%26targetid%3Dkwd-541132862%26loc_physical_ms%3D1009214%26loc_interest_ms%3D%26feeditemid%3D%26param1%3D%26param2%3D&gclid=Cj0KCQjwyLGjBhDKARIsAFRNgW_ijq8jg_MzP285wZHHwTkrG1QfhtuqbXeIesbOCM28FXQCAlF2SC0aAsGsEALw_wcB">
-          <%= image_tag "facebook.png", alt: "Facebook", class: "rounded-circle", width: "50", height: "50" %>
-          </a>
-        </li>
-      </ol>
-    </div>
-    <div class="p-4 ">
-      <h4 class="fst-italic text-center">Archives</h4>
+        <% end %>
       
-      <ul class="list-unstyled mt-3 d-flex justify-content-between align-items-center">
-        <li class="me-3"><a href="#" class="link-secondary ">Mar-2021</a></li>
-        <li class="me-3"><a href="#" class="link-secondary ">Feb-2021</a></li>
-        <li class="me-3"><a href="#" class="link-secondary ">Jan-2021</a></li>
-        <li class="me-3"><a href="#" class="link-secondary ">Dec-2020</a></li>
-        <li class="me-3"><a href="#" class="link-secondary ">Nov-2020</a></li>
-        <li class="me-3"><a href="#" class="link-secondary ">Oct-2020</a></li>
-        <li class="me-3"><a href="#" class="link-secondary ">Sep-2020</a></li>
-        <li class="me-3"><a href="#" class="link-secondary ">Aug-2020</a></li>
-        <li class="me-3"><a href="#" class="link-secondary ">Jul-2020</a></li>
-        <li class="me-3"><a href="#" class="link-secondary ">Jun-2020</a></li>
-        <li class="me-3"><a href="#" class="link-secondary ">May-2020</a></li>
-        <li class="me-3"><a href="#" class="link-secondary ">Apr-2020</a></li>
-      </ul>
-    </div>
-    <%= link_to new_post_path, class: 'purchase-btn' do %>
-      <span class='purchase-btn-text'>Post HERE Click !!!</span>
-      <%= image_tag 'header-post_logo.png' , size: '85x50' ,class: "purchase-btn-icon" %>
-  <% end %>
-  <%# </div> %>
-</main>
+      </div>
+      <div class="p-4">
+        <h4 class="fst-italic text-center ">Elsewhere</h4>
+        <ol class="list-unstyled mt-4 d-flex justify-content-around align-items-center">
+          <li class="me-1">
+            <a href="https://github.com/"><%= image_tag "github.png", alt: "GitHub", class: "rounded-circle", width: "50", height: "50" %></a>
+          </li>
+          <li class="me-1">
+            <a href="https://www.instagram.com/"><%= image_tag "instagram.png", alt: "Twitter", class: "rounded-circle", width: "50", height: "50" %></a>
+          </li>
+          <li class="me-1">
+            <a href="https://twitter.com/home"><%= image_tag "twitter.png", alt: "Instagram", class: "rounded-circle", width: "50", height: "50" %></a>
+          </li>
+          <li class="me-1">
+            <a href="https://www.facebook.com/campaign/landing.php?campaign_id=1665596389&extra_1=s%7Cc%7C321610682046%7Ce%7Cfacebook%7C&placement=&creative=321610682046&keyword=facebook&partner_id=googlesem&extra_2=campaignid%3D1665596389%26adgroupid%3D65075436220%26matchtype%3De%26network%3Dg%26source%3Dnotmobile%26search_or_content%3Ds%26device%3Dc%26devicemodel%3D%26adposition%3D%26target%3D%26targetid%3Dkwd-541132862%26loc_physical_ms%3D1009214%26loc_interest_ms%3D%26feeditemid%3D%26param1%3D%26param2%3D&gclid=Cj0KCQjwyLGjBhDKARIsAFRNgW_ijq8jg_MzP285wZHHwTkrG1QfhtuqbXeIesbOCM28FXQCAlF2SC0aAsGsEALw_wcB">
+            <%= image_tag "facebook.png", alt: "Facebook", class: "rounded-circle", width: "50", height: "50" %>
+            </a>
+          </li>
+        </ol>
+      </div>
+      <div class="p-4 ">
+        <h4 class="fst-italic text-center">Archives</h4>
+        
+        <ul class="list-unstyled mt-3 d-flex justify-content-between align-items-center">
+          <li class="me-3"><a href="#" class="link-secondary ">Mar-2021</a></li>
+          <li class="me-3"><a href="#" class="link-secondary ">Feb-2021</a></li>
+          <li class="me-3"><a href="#" class="link-secondary ">Jan-2021</a></li>
+          <li class="me-3"><a href="#" class="link-secondary ">Dec-2020</a></li>
+          <li class="me-3"><a href="#" class="link-secondary ">Nov-2020</a></li>
+          <li class="me-3"><a href="#" class="link-secondary ">Oct-2020</a></li>
+          <li class="me-3"><a href="#" class="link-secondary ">Sep-2020</a></li>
+          <li class="me-3"><a href="#" class="link-secondary ">Aug-2020</a></li>
+          <li class="me-3"><a href="#" class="link-secondary ">Jul-2020</a></li>
+          <li class="me-3"><a href="#" class="link-secondary ">Jun-2020</a></li>
+          <li class="me-3"><a href="#" class="link-secondary ">May-2020</a></li>
+          <li class="me-3"><a href="#" class="link-secondary ">Apr-2020</a></li>
+        </ul>
+      </div>
+      <%= link_to new_post_path, class: 'purchase-btn' do %>
+        <span class='purchase-btn-text'>Post HERE Click !!!</span>
+        <%= image_tag 'header-post_logo.png' , size: '85x50' ,class: "purchase-btn-icon" %>
+    <% end %>
+  </main>
 
-<footer class="blog-footer">
-  <p>
-    <a href="#"><%= link_to image_tag("header-post_logo.png", size: '60x50',class:"apple-btn"), "#" %></a>
-  </p>Established  by  <a href="https://twitter.com/mdo">Wan-Coins.Co.Ltd</a>.</p>
-</footer>
-
-
-    
-  </body>
+  <footer class="blog-footer">
+    <p>
+      <a href="#"><%= link_to image_tag("header-post_logo.png", size: '60x50',class:"apple-btn"), "#" %></a>
+    </p>Established  by  <a href="https://twitter.com/mdo">Wan-Coins.Co.Ltd</a>.</p>
+  </footer>  
+  
+</body>
 </html>
