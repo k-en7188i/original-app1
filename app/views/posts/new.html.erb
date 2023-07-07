@@ -65,63 +65,6 @@
     </div>
     <%# /おすすめ記事のタイトル %>
 
-    <%# 配送について %>
-    <%# <div class="posts-detail">
-      <div class="weight-bold-text question-text">
-        <span>配送について</span>
-        <a class="question" href="#">?</a>
-      </div>
-      <div class="form">
-        <div class="weight-bold-text">
-          配送料の負担
-          <span class="indispensable">必須</span>
-        </div> %>
-        <%#= f.collection_select(:shipping_fee_id, ShippingFee.all, :id, :name, {}, {class:"select-box", id:"post-shipping-fee-status"}) %>
-        <%# <div class="weight-bold-text">
-          発送元の地域
-          <span class="indispensable">必須</span>
-        </div> %>
-        <%#= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"post-prefecture"}) %>
-        <%# <div class="weight-bold-text">
-          発送までの日数
-          <span class="indispensable">必須</span>
-        </div> %>
-        <%#= f.collection_select(:shipping_day_id, ShippingDay.all, :id, :name, {}, {class:"select-box", id:"post-scheduled-delivery"}) %>
-      <%# </div> %>
-    <%# </div> %>
-    <%# /配送について %>
-
-    <%# 販売価格 %>
-    <%# <div class="sell-price">
-      <div class="weight-bold-text question-text">
-        <span>販売価格<br>(¥300〜9,999,999)</span>
-        <a class="question" href="#">?</a>
-      </div>
-      <div>
-        <div class="price-content">
-          <div class="price-text">
-            <span>価格</span>
-            <span class="indispensable">必須</span>
-          </div>
-          <span class="sell-yen">¥</span> %>
-          <%#= f.text_field :price, class:"price-input", id:"post-price", placeholder:"例）300" %>
-        <%# </div>
-        <div class="price-content">
-          <span>販売手数料 (10%)</span>
-          <span>
-            <span id='add-tax-price'></span>円
-          </span>
-        </div>
-        <div class="price-content">
-          <span>販売利益</span>
-          <span>
-            <span id='profit'></span>円
-          </span>
-        </div>
-      </div>
-    </div> %>
-    <%# /販売価格 %>
-
     <%# 注意書き %>
     <div class="caution">
       <p class="sentence">
