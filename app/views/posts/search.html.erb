@@ -4,8 +4,6 @@
 <% end %>
 <% if @posts.present? %>
   <div class="contents row">
-    <%# @posts.each do |post| %>
       <%= render "shared/search", locals: { post: @post } %>
-    <%# end %>
   </div>
 <% end %>
