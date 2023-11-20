@@ -43,3 +43,30 @@
 <div class="sell-btn-contents mt-4">
   <%=link_to '戻る', root_path, class:"back-btn" %>
 </div>
+
+<!-- app/views/reservations/new.html.erb -->
+
+<div id="reservation-form">
+  <div >
+    <label>大人(1000円):</label>
+    <button type="button" id="increment-adult">+</button>
+    <input type="text" id="adult-count" value="0" readonly>
+    <button type="button" id="decrement-adult">-</button>
+  </div>
+  <div>
+    <label>子供&nbsp;&nbsp;(500円):</label>
+    <button type="button" id="increment-child">+</button>
+    <input type="text" id="child-count" value="0" readonly>
+    <button type="button" id="decrement-child">-</button>
+  </div>
+
+  <div>
+    <p>合計人数: <span id="total-count">0</span> 人</p>
+    <p>合計金額: <span id="total-price">0</span> 円</p>
+  </div>
+</div>
+
+  <%# %以下は購入機能に接続するリンク %>
+  <%#= button_to '予約する', reservations_path, method: :post, data: { disable_with: '処理中...' } %>
+
+<%# </form> %>

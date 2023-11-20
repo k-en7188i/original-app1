@@ -4,7 +4,7 @@
 // that code so it'll be compiled.
 
 require("@rails/ujs").start()
-// require("turbolinks").start()
+require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 import "bootstrap"
@@ -18,7 +18,7 @@ require("../revert_check");
 require("../visible_password");
 require("../menu")  // ドロップダウンをカーソルを載せるだけで表示させる機能
 require("../review")  // レビューの星マークにカーソルを載せた時の処理
-
+require("../reservation") //予約機能のjs
 
 
 
